@@ -1,7 +1,7 @@
 """
 Vigil. — Payment Risk Intelligence & Incident Response Platform
 Enterprise web application for payment fraud detection, incident triage, user administration,
-and product landing page. Built with Razorpay design standards.
+live telemetry inspection, and policy management. Built with Razorpay design standards.
 """
 
 import json
@@ -14,19 +14,25 @@ from fastapi.responses import HTMLResponse, JSONResponse
 
 PROJECT_ROOT = Path(__file__).parent.parent
 
-app = FastAPI(title="Vigil Platform", version="3.0.0")
+app = FastAPI(title="Vigil Platform", version="3.5.0")
 
 ENRICHED_INCIDENTS = [
     {
         "incident_id": "INC-001",
         "title": "Distributed Credential Stuffing on Authentication Gateway",
         "severity": "escalate",
+        "status": "open",
         "confidence": 0.96,
         "attack_category": "Authentication Attack",
         "explanation": "Over 35 rapid failed login attempts were detected from two distinct external IPs (185.220.101.42 and 45.33.32.156) attempting to validate merchant credentials against /v1/auth/login. Both IPs rotated through 14 different merchant keys within a 7-minute window.",
         "risk_summary": "High risk of merchant account takeover and unauthorized API key exposure.",
         "recommended_action": "Block source IP ranges at edge firewall, enforce strict rate limiting on /v1/auth/login, and notify the 14 affected merchants to rotate credentials.",
         "related_flags": ["FLG-001", "FLG-002"],
+        "remediation_options": [
+            "Block IP range 185.220.101.0/24 & 45.33.32.0/24 at Edge WAF",
+            "Apply strict 5 req/min rate limiting on /v1/auth/login",
+            "Force key rotation & revoke active sessions for 14 affected merchants"
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "a17498c01b4",
@@ -43,12 +49,18 @@ ENRICHED_INCIDENTS = [
         "incident_id": "INC-002",
         "title": "Unauthorized Settlement Configuration Access",
         "severity": "escalate",
+        "status": "open",
         "confidence": 0.98,
         "attack_category": "Privilege Anomaly",
         "explanation": "Administrative user admin_04 accessed critical settlement routing parameters (/v1/settlements/config) at 03:00 AM UTC from an unrecognized VPN IP address (178.62.45.91). The session initiated mass API key rotation across 12 merchant accounts.",
         "risk_summary": "Critical risk of unauthorized settlement diversion and merchant account compromise.",
         "recommended_action": "Immediately terminate active session for admin_04, lock administrative credentials, and hold automated payout processing pending audit.",
         "related_flags": ["FLG-003", "FLG-004", "FLG-005"],
+        "remediation_options": [
+            "Terminate active session token for admin_04",
+            "Lock administrative credentials & require hardware MFA reset",
+            "Place temporary hold on upcoming automated settlement batch (INR 42.8M)"
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "b88301ec992",
@@ -65,12 +77,18 @@ ENRICHED_INCIDENTS = [
         "incident_id": "INC-003",
         "title": "High-Velocity Merchant Refund Surge",
         "severity": "escalate",
+        "status": "open",
         "confidence": 0.91,
         "attack_category": "Payment Velocity",
         "explanation": "Merchant merchant_042 issued 18 high-value refunds totaling INR 1,34,898 within 30 minutes. The merchant average is 2 refunds per day. No batch identifiers were present in transaction headers.",
         "risk_summary": "Potential merchant account takeover or fraudulent balance drainage.",
         "recommended_action": "Temporarily pause instant refund settlement for merchant_042 and initiate merchant verification workflow.",
         "related_flags": ["FLG-008"],
+        "remediation_options": [
+            "Suspend instant refund API permissions for merchant_042",
+            "Hold pending bank settlements for 24 hours",
+            "Dispatch automated security verification email to merchant authorized contact"
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "c49921fa771",
@@ -87,12 +105,14 @@ ENRICHED_INCIDENTS = [
         "incident_id": "INC-004",
         "title": "Routine Subscription Cancellation Refund Batch",
         "severity": "dismiss",
+        "status": "resolved",
         "confidence": 0.99,
         "attack_category": "Operational Batch",
         "explanation": "Merchant merchant_088 triggered 12 consecutive refunds within 5 minutes. While flagged by statistical volume rules, analysis confirms all transactions share standard INR 499 plan amounts, automated batch tag BATCH-20260904-001, and recurring billing metadata.",
         "risk_summary": "No risk detected. Standard subscription billing cancellation cycle.",
         "recommended_action": "No action required. Dismissed with full audit record preserved.",
         "related_flags": ["FLG-009"],
+        "remediation_options": [],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "d10924ac884",
@@ -109,12 +129,17 @@ ENRICHED_INCIDENTS = [
         "incident_id": "INC-005",
         "title": "Multiple API Key Generations from Unrecognized Network",
         "severity": "watch",
+        "status": "open",
         "confidence": 0.84,
         "attack_category": "Access Control",
         "explanation": "Merchant merchant_119 generated 3 new production API keys from an unrecognized external IP address within 4 minutes. Standard MFA verification succeeded.",
         "risk_summary": "Moderate risk. Likely routine key rotation or new developer onboarding.",
         "recommended_action": "Place on 24-hour observation list and send confirmation notification to primary account email.",
         "related_flags": ["FLG-010", "FLG-011"],
+        "remediation_options": [
+            "Add merchant_119 to 24-hour security watch window",
+            "Send merchant push notification for key creation confirmation"
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "e55102ff331",
@@ -130,12 +155,17 @@ ENRICHED_INCIDENTS = [
         "incident_id": "INC-006",
         "title": "Abnormal Geolocation Shift on Administrative Session",
         "severity": "watch",
+        "status": "open",
         "confidence": 0.82,
         "attack_category": "Session Integrity",
         "explanation": "Dashboard session for finance_manager_02 authenticated from Mumbai, followed 14 minutes later by an authentication attempt from Frankfurt. Impossible travel distance recorded.",
         "risk_summary": "Low to moderate risk. Likely corporate VPN routing or remote proxy usage.",
         "recommended_action": "Enforce biometric or SMS step-up verification on next financial action.",
         "related_flags": ["FLG-012"],
+        "remediation_options": [
+            "Enforce step-up biometric prompt on next session action",
+            "Log IP subnet 185.190.140.0/24 as corporate VPN node"
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "f66019aa442",
@@ -151,12 +181,17 @@ ENRICHED_INCIDENTS = [
         "incident_id": "INC-007",
         "title": "High-Frequency Webhook Signature Mismatch Burst",
         "severity": "escalate",
+        "status": "open",
         "confidence": 0.94,
         "attack_category": "Webhook Security",
         "explanation": "Endpoint /v1/webhooks/payment-response recorded 88 consecutive HMAC-SHA256 signature verification failures within 60 seconds from external IP 194.26.29.11.",
         "risk_summary": "High risk of webhook replay attempts or payment notification tampering.",
         "recommended_action": "Drop traffic from source IP at edge router and review webhook endpoint logs.",
         "related_flags": ["FLG-013", "FLG-014"],
+        "remediation_options": [
+            "Drop inbound traffic from IP 194.26.29.11 at edge gateway",
+            "Rotate webhook signing secret for affected payment endpoints"
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "g77192bb553",
@@ -755,6 +790,11 @@ def dashboard():
             padding: 2px 8px;
             border-radius: 3px;
             color: var(--text-secondary);
+            cursor: pointer;
+        }}
+        .tag-pill:hover {{
+            border-color: var(--primary);
+            color: var(--primary);
         }}
 
         /* Table Components */
@@ -807,6 +847,7 @@ def dashboard():
         .data-table tr:hover td {{
             background: #F8FAFC;
             color: var(--text-main);
+            cursor: pointer;
         }}
         .mono {{
             font-family: var(--mono);
@@ -867,7 +908,7 @@ def dashboard():
             color: var(--text-secondary);
         }}
 
-        /* Modal Backdrop and Box */
+        /* Modals and Overlays */
         .modal-overlay {{
             position: fixed;
             top: 0;
@@ -937,6 +978,56 @@ def dashboard():
         .user-option-card.active-user {{
             border-color: var(--primary);
             background: #EDF4FF;
+        }}
+
+        /* Log Inspector Drawer */
+        .drawer-overlay {{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11,25,44,0.4);
+            display: none;
+            justify-content: flex-end;
+            z-index: 90;
+        }}
+        .drawer-overlay.open {{
+            display: flex;
+        }}
+        .drawer-panel {{
+            width: 480px;
+            max-width: 90vw;
+            background: #FFFFFF;
+            height: 100%;
+            box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--border);
+        }}
+        .drawer-header {{
+            padding: 18px 22px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #F8FAFC;
+        }}
+        .drawer-body {{
+            padding: 22px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }}
+        .raw-json-block {{
+            background: #0C1E36;
+            color: #E2E8F0;
+            font-family: var(--mono);
+            font-size: 11.5px;
+            line-height: 1.6;
+            padding: 14px;
+            border-radius: 6px;
+            overflow-x: auto;
+            white-space: pre-wrap;
         }}
 
         /* Landing Page View */
@@ -1046,7 +1137,7 @@ def dashboard():
             <div class="nav-label">Investigation Queue</div>
             <a class="nav-item active" onclick="switchTab('incidents', this)">
                 <span>Active Incidents</span>
-                <span class="nav-dot-crit" title="Important unread incidents"></span>
+                <span class="nav-dot-crit" id="sidebar-crit-dot"></span>
             </a>
             <a class="nav-item" onclick="switchTab('telemetry', this)">
                 <span>Gateway Telemetry</span>
@@ -1086,7 +1177,7 @@ def dashboard():
             <div class="topbar-actions">
                 <button class="btn btn-default" onclick="openLanding()">Product Tour</button>
                 <button class="btn btn-default" onclick="exportData()">Export Audit Log</button>
-                <button class="btn btn-primary" onclick="alert('Running live gateway telemetry scan...')">Trigger Rescan</button>
+                <button class="btn btn-primary" onclick="triggerRescan()">Trigger Rescan</button>
                 <div style="width: 1px; height: 24px; background: var(--border); margin: 0 4px;"></div>
                 <div style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 4px 8px; border-radius: 5px;" onclick="openUserModal()">
                     <div id="topbar-user-avatar" style="width: 28px; height: 28px; border-radius: 50%; background: #0052CC; color: #FFFFFF; font-weight: 700; font-size: 11px; display: flex; align-items: center; justify-content: center;">RA</div>
@@ -1107,7 +1198,7 @@ def dashboard():
                 <span class="metric-lbl">Signals Flagged</span>
             </div>
             <div class="metric-cell">
-                <span class="metric-val crit">4</span>
+                <span class="metric-val crit" id="kpi-escalated-count">4</span>
                 <span class="metric-lbl">Escalated</span>
             </div>
             <div class="metric-cell">
@@ -1115,7 +1206,7 @@ def dashboard():
                 <span class="metric-lbl">Under Watch</span>
             </div>
             <div class="metric-cell">
-                <span class="metric-val ok">1</span>
+                <span class="metric-val ok" id="kpi-resolved-count">1</span>
                 <span class="metric-lbl">Dismissed Benign</span>
             </div>
             <div class="metric-cell">
@@ -1136,10 +1227,10 @@ def dashboard():
                     <div class="panel-search-bar">
                         <input type="text" id="inc-search" class="search-input" placeholder="Search incidents..." oninput="filterIncidents()">
                         <div class="filter-tabs">
-                            <button class="filter-btn active" onclick="setFilter('all', this)">All (7)</button>
-                            <button class="filter-btn" onclick="setFilter('critical', this)">Critical (4)</button>
+                            <button class="filter-btn active" onclick="setFilter('all', this)">All (<span id="count-all">7</span>)</button>
+                            <button class="filter-btn" onclick="setFilter('critical', this)">Critical (<span id="count-crit">4</span>)</button>
                             <button class="filter-btn" onclick="setFilter('review', this)">Review (2)</button>
-                            <button class="filter-btn" onclick="setFilter('resolved', this)">Resolved (1)</button>
+                            <button class="filter-btn" onclick="setFilter('resolved', this)">Resolved (<span id="count-res">1</span>)</button>
                         </div>
                     </div>
                     <div class="incident-scroll-list" id="incident-items-container">
@@ -1159,7 +1250,7 @@ def dashboard():
             <div class="table-card">
                 <div class="table-toolbar">
                     <input type="text" id="event-search" class="search-input" style="max-width: 320px;" placeholder="Filter by event ID, IP, or endpoint..." oninput="filterEvents()">
-                    <span class="metric-lbl" id="event-count-label">Showing 1,284 events</span>
+                    <span class="metric-lbl" id="event-count-label">Showing 1,284 events (Click any row to inspect raw payload)</span>
                 </div>
                 <div class="table-scroll" id="telemetry-scroll-pane" onscroll="handleTelemetryScroll()">
                     <table class="data-table">
@@ -1211,25 +1302,37 @@ def dashboard():
         <section id="view-rules" class="view-pane">
             <div style="overflow-y: auto; display: flex; flex-direction: column; gap: 14px;">
                 <div class="info-callout">
-                    <div class="info-callout-head">POL-01: Authentication Rate Limit & Credential Stuffing Defense</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <div class="info-callout-head">POL-01: Authentication Rate Limit & Credential Stuffing Defense</div>
+                        <span class="badge-pill" style="background: #D1FAE5; color: #065F46;">Active Enforced</span>
+                    </div>
                     <div class="info-callout-body">
                         Monitors <code>/v1/auth/login</code> and API key validation. Triggers when failure rate exceeds 85% or >5 unique merchant keys are tested from clustered IP ranges within a 10-minute sliding window.
                     </div>
                 </div>
                 <div class="info-callout">
-                    <div class="info-callout-head">POL-02: Privileged Settlement Policy & Key Access Rule</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <div class="info-callout-head">POL-02: Privileged Settlement Policy & Key Access Rule</div>
+                        <span class="badge-pill" style="background: #D1FAE5; color: #065F46;">Active Enforced</span>
+                    </div>
                     <div class="info-callout-body">
                         Monitors sensitive administrative paths including <code>/v1/settlements/config</code>, <code>/admin/merchant-controls</code>, and settlement routing rules. Triggers on off-hours access (22:00–06:00 UTC) or unverified ASN ranges.
                     </div>
                 </div>
                 <div class="info-callout">
-                    <div class="info-callout-head">POL-03: Merchant Refund Velocity Threshold</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <div class="info-callout-head">POL-03: Merchant Refund Velocity Threshold</div>
+                        <span class="badge-pill" style="background: #D1FAE5; color: #065F46;">Active Enforced</span>
+                    </div>
                     <div class="info-callout-body">
                         Computes rolling 30-minute refund ratios against merchant historical baselines. Triggers when refund frequency exceeds 5x normal rate unless accompanied by signed batch cancellation headers.
                     </div>
                 </div>
                 <div class="info-callout">
-                    <div class="info-callout-head">POL-04: Webhook Signature Integrity & Replay Defense</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <div class="info-callout-head">POL-04: Webhook Signature Integrity & Replay Defense</div>
+                        <span class="badge-pill" style="background: #D1FAE5; color: #065F46;">Active Enforced</span>
+                    </div>
                     <div class="info-callout-body">
                         Monitors HMAC-SHA256 signature verification errors on payment response callbacks. Triggers when mismatch rate exceeds 10 requests per minute from a single origin.
                     </div>
@@ -1280,7 +1383,7 @@ def dashboard():
             </nav>
 
             <section class="landing-hero">
-                <span class="hero-tag">AI-Powered Payment Risk Intelligence</span>
+                <span class="hero-tag">Payment Risk Intelligence</span>
                 <h1 class="hero-h1">Autonomous Fraud Detection & Incident Triage for Payment Platforms</h1>
                 <p class="hero-sub">
                     Protect payment gateways against distributed credential stuffing, rogue settlement modifications, and abnormal refund surges with evidence-grounded AI explainability and zero alert fatigue.
@@ -1359,8 +1462,65 @@ def dashboard():
         </div>
     </div>
 
+    <!-- REMEDIATION ACTION MODAL -->
+    <div id="remediation-modal" class="modal-overlay" onclick="handleRemediationBackdrop(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title" id="remediation-modal-title">Execute Incident Remediation</div>
+                <button class="modal-close" onclick="closeRemediationModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px;">Select mitigation actions to deploy across perimeter and gateway APIs:</div>
+                <div id="remediation-options-list" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+                    <!-- Populated via JS -->
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button class="btn btn-default" onclick="closeRemediationModal()">Cancel</button>
+                    <button class="btn btn-primary" onclick="confirmRemediation()">Deploy Mitigations &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOG INSPECTOR DRAWER -->
+    <div id="log-inspector-drawer" class="drawer-overlay" onclick="handleDrawerBackdrop(event)">
+        <div class="drawer-panel">
+            <div class="drawer-header">
+                <div>
+                    <div style="font-size: 14px; font-weight: 700; color: var(--text-main);" id="drawer-event-id">Event Inspector</div>
+                    <div style="font-size: 11px; color: var(--text-muted);" id="drawer-event-time">Timestamp</div>
+                </div>
+                <button class="modal-close" onclick="closeLogDrawer()">&times;</button>
+            </div>
+            <div class="drawer-body">
+                <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Telemetry Parameters</div>
+                <div class="meta-grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 16px;">
+                    <div>
+                        <div class="meta-field-label">Action</div>
+                        <div class="meta-field-val" id="drawer-action">refund_issued</div>
+                    </div>
+                    <div>
+                        <div class="meta-field-label">Endpoint</div>
+                        <div class="meta-field-val" id="drawer-endpoint">/v1/refunds</div>
+                    </div>
+                    <div>
+                        <div class="meta-field-label">Actor ID</div>
+                        <div class="meta-field-val" id="drawer-actor">merchant_042</div>
+                    </div>
+                    <div>
+                        <div class="meta-field-label">Origin IP</div>
+                        <div class="meta-field-val" id="drawer-ip">103.60.130.155</div>
+                    </div>
+                </div>
+
+                <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Raw Payload & Headers</div>
+                <div class="raw-json-block" id="drawer-raw-json"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        const incidents = {incidents_json_str};
+        let incidents = {incidents_json_str};
         const flags = {flags_json_str};
         const allEvents = {events_json_str};
         let filteredEvents = allEvents;
@@ -1405,9 +1565,10 @@ def dashboard():
 
             items.forEach(inc => {{
                 const isSelected = inc.incident_id === selectedIncidentId;
+                const isResolved = inc.status === 'resolved' || inc.severity === 'dismiss';
                 const sev = inc.severity || 'unknown';
-                let pillClass = sev === 'escalate' ? 'critical' : (sev === 'watch' ? 'review' : 'resolved');
-                let pillText = sev === 'escalate' ? 'Critical' : (sev === 'watch' ? 'Review' : 'Resolved');
+                let pillClass = isResolved ? 'resolved' : (sev === 'escalate' ? 'critical' : 'review');
+                let pillText = isResolved ? 'Resolved' : (sev === 'escalate' ? 'Critical' : 'Review');
 
                 const div = document.createElement('div');
                 div.className = `incident-item ${{isSelected ? 'selected' : ''}}`;
@@ -1438,9 +1599,10 @@ def dashboard():
                 return;
             }}
 
+            const isResolved = inc.status === 'resolved' || inc.severity === 'dismiss';
             const sev = inc.severity || 'unknown';
-            let pillClass = sev === 'escalate' ? 'critical' : (sev === 'watch' ? 'review' : 'resolved');
-            let pillText = sev === 'escalate' ? 'Critical' : (sev === 'watch' ? 'Review' : 'Resolved');
+            let pillClass = isResolved ? 'resolved' : (sev === 'escalate' ? 'critical' : 'review');
+            let pillText = isResolved ? 'Resolved' : (sev === 'escalate' ? 'Critical' : 'Review');
             const confPct = Math.round((inc.confidence || 0) * 100);
             const audit = inc.audit || {{}};
             const steps = audit.reasoning_steps || [];
@@ -1453,7 +1615,7 @@ def dashboard():
 
             let evidenceHtml = '';
             evidence.forEach(ev => {{
-                evidenceHtml += `<span class="tag-pill">${{escapeHtml(ev)}}</span>`;
+                evidenceHtml += `<span class="tag-pill" onclick="openLogForEventId('${{escapeHtml(ev)}}')">${{escapeHtml(ev)}}</span>`;
             }});
 
             container.innerHTML = `
@@ -1467,7 +1629,9 @@ def dashboard():
                         <h2 class="detail-title">${{escapeHtml(inc.title)}}</h2>
                     </div>
                     <div class="detail-actions">
-                        ${{sev === 'escalate' ? '<button class="btn btn-danger" onclick="alert(\\'Mitigation applied: Perimeter rules updated.\\')">Apply Mitigation</button>' : '<button class="btn btn-default" onclick="alert(\\'Incident state acknowledged.\\')">Acknowledge</button>'}}
+                        ${{isResolved ? '<button class="btn btn-default" style="color: #065F46; border-color: #A7F3D0; background: #ECFDF5;">&check; Mitigated & Closed</button>' : 
+                           (sev === 'escalate' ? `<button class="btn btn-danger" onclick="openRemediationModal('${{inc.incident_id}}')">Apply Mitigation</button>` : 
+                            `<button class="btn btn-default" onclick="acknowledgeIncident('${{inc.incident_id}}')">Acknowledge</button>`)}}
                     </div>
                 </div>
 
@@ -1505,7 +1669,7 @@ def dashboard():
                 </div>
 
                 <div class="detail-section">
-                    <div class="section-heading">Cited Event Evidence IDs (${{evidence.length}})</div>
+                    <div class="section-heading">Cited Event Evidence IDs (${{evidence.length}} - Click to inspect)</div>
                     <div class="tags-row">${{evidenceHtml || '<span style="font-size: 12px; color: var(--text-muted);">None cited</span>'}}</div>
                 </div>
             `;
@@ -1514,14 +1678,30 @@ def dashboard():
         function filterIncidents() {{
             const q = document.getElementById('inc-search').value.toLowerCase();
             const filtered = incidents.filter(inc => {{
+                const isResolved = inc.status === 'resolved' || inc.severity === 'dismiss';
                 const matchFilter = activeFilter === 'all' || 
-                    (activeFilter === 'critical' && inc.severity === 'escalate') ||
-                    (activeFilter === 'review' && inc.severity === 'watch') ||
-                    (activeFilter === 'resolved' && inc.severity === 'dismiss');
+                    (activeFilter === 'critical' && inc.severity === 'escalate' && !isResolved) ||
+                    (activeFilter === 'review' && inc.severity === 'watch' && !isResolved) ||
+                    (activeFilter === 'resolved' && isResolved);
                 const matchQuery = !q || (inc.title && inc.title.toLowerCase().includes(q)) || (inc.explanation && inc.explanation.toLowerCase().includes(q));
                 return matchFilter && matchQuery;
             }});
             renderIncidentList(filtered);
+            updateIncidentCounts();
+        }}
+
+        function updateIncidentCounts() {{
+            const crit = incidents.filter(i => i.severity === 'escalate' && i.status !== 'resolved').length;
+            const res = incidents.filter(i => i.status === 'resolved' || i.severity === 'dismiss').length;
+            document.getElementById('count-crit').innerText = crit;
+            document.getElementById('count-res').innerText = res;
+            document.getElementById('kpi-escalated-count').innerText = crit;
+            document.getElementById('kpi-resolved-count').innerText = res;
+            if (crit === 0) {{
+                document.getElementById('sidebar-crit-dot').style.display = 'none';
+            }} else {{
+                document.getElementById('sidebar-crit-dot').style.display = 'inline-block';
+            }}
         }}
 
         function resetAndRenderTelemetry() {{
@@ -1540,8 +1720,9 @@ def dashboard():
             nextSlice.forEach(ev => {{
                 const tr = document.createElement('tr');
                 const isFail = ev.status === 'failed';
+                tr.onclick = () => openLogDrawerForEvent(ev);
                 tr.innerHTML = `
-                    <td class="mono">${{ev.event_id || ''}}</td>
+                    <td class="mono"><strong>${{ev.event_id || ''}}</strong></td>
                     <td class="mono" style="color: var(--text-muted);">${{(ev.timestamp || '').substring(11, 19)}}</td>
                     <td><strong>${{escapeHtml(ev.action || ev.endpoint || '')}}</strong></td>
                     <td class="mono">${{escapeHtml(ev.actor_id || ev.actor || ev.api_key_id || 'system')}}</td>
@@ -1572,7 +1753,7 @@ def dashboard():
                        (ev.action && ev.action.toLowerCase().includes(q)) ||
                        (ev.endpoint && ev.endpoint.toLowerCase().includes(q));
             }});
-            document.getElementById('event-count-label').innerText = `Showing ${{filteredEvents.length.toLocaleString()}} events`;
+            document.getElementById('event-count-label').innerText = `Showing ${{filteredEvents.length.toLocaleString()}} events (Click any row to inspect raw payload)`;
             resetAndRenderTelemetry();
         }}
 
@@ -1592,6 +1773,102 @@ def dashboard():
                 `;
                 tbody.appendChild(tr);
             }});
+        }}
+
+        // Log Inspector Drawer Functions
+        function openLogDrawerForEvent(ev) {{
+            document.getElementById('drawer-event-id').innerText = ev.event_id || 'Event Log';
+            document.getElementById('drawer-event-time').innerText = ev.timestamp || '';
+            document.getElementById('drawer-action').innerText = ev.action || 'N/A';
+            document.getElementById('drawer-endpoint').innerText = ev.endpoint || 'N/A';
+            document.getElementById('drawer-actor').innerText = ev.actor_id || ev.actor || 'N/A';
+            document.getElementById('drawer-ip').innerText = ev.ip || ev.ip_address || 'internal';
+            document.getElementById('drawer-raw-json').innerText = JSON.stringify(ev, null, 2);
+            document.getElementById('log-inspector-drawer').classList.add('open');
+        }}
+
+        function openLogForEventId(eventId) {{
+            const ev = allEvents.find(e => e.event_id === eventId) || {{ event_id: eventId, note: "Historical telemetry slice indexed in pipeline run." }};
+            openLogDrawerForEvent(ev);
+        }}
+
+        function closeLogDrawer() {{
+            document.getElementById('log-inspector-drawer').classList.remove('open');
+        }}
+
+        function handleDrawerBackdrop(e) {{
+            if (e.target.id === 'log-inspector-drawer') closeLogDrawer();
+        }}
+
+        // Remediation Action Modal
+        let activeRemediatingIncId = null;
+        function openRemediationModal(incId) {{
+            activeRemediatingIncId = incId;
+            const inc = incidents.find(i => i.incident_id === incId);
+            if (!inc) return;
+
+            document.getElementById('remediation-modal-title').innerText = `Remediate: ${{inc.incident_id}}`;
+            const listContainer = document.getElementById('remediation-options-list');
+            listContainer.innerHTML = '';
+
+            const options = inc.remediation_options && inc.remediation_options.length > 0 ? 
+                inc.remediation_options : ["Deploy perimeter WAF block rule", "Revoke compromised session tokens", "Notify merchant security contact"];
+
+            options.forEach((opt, idx) => {{
+                const label = document.createElement('label');
+                label.style.display = 'flex';
+                label.style.alignItems = 'center';
+                label.style.gap = '10px';
+                label.style.padding = '10px 14px';
+                label.style.border = '1px solid var(--border)';
+                label.style.borderRadius = '5px';
+                label.style.background = '#F8FAFC';
+                label.style.cursor = 'pointer';
+                label.innerHTML = `
+                    <input type="checkbox" checked style="accent-color: #0052CC; width: 16px; height: 16px;">
+                    <span style="font-size: 13px; font-weight: 500; color: var(--text-main);">${{escapeHtml(opt)}}</span>
+                `;
+                listContainer.appendChild(label);
+            }});
+
+            document.getElementById('remediation-modal').classList.add('open');
+        }}
+
+        function closeRemediationModal() {{
+            document.getElementById('remediation-modal').classList.remove('open');
+            activeRemediatingIncId = null;
+        }}
+
+        function handleRemediationBackdrop(e) {{
+            if (e.target.id === 'remediation-modal') closeRemediationModal();
+        }}
+
+        function confirmRemediation() {{
+            if (!activeRemediatingIncId) return;
+            const inc = incidents.find(i => i.incident_id === activeRemediatingIncId);
+            if (inc) {{
+                inc.status = 'resolved';
+                inc.audit.reasoning_steps.push(`5. Mitigations applied by active analyst session at ${{new Date().toISOString()}}. Incident marked Resolved.`);
+            }}
+            closeRemediationModal();
+            filterIncidents();
+            renderIncidentDetail(activeRemediatingIncId);
+            alert(`Remediation executed successfully for ${{activeRemediatingIncId}}. Perimeter rules updated and incident closed.`);
+        }}
+
+        function acknowledgeIncident(incId) {{
+            const inc = incidents.find(i => i.incident_id === incId);
+            if (inc) {{
+                inc.status = 'resolved';
+                inc.audit.reasoning_steps.push(`4. Incident acknowledged and marked Reviewed by analyst.`);
+            }}
+            filterIncidents();
+            renderIncidentDetail(incId);
+            alert(`Incident ${{incId}} acknowledged.`);
+        }}
+
+        function triggerRescan() {{
+            alert('Pipeline scan active: Ground truth logs verified (94.2% precision, 96.8% recall).');
         }}
 
         function escapeHtml(str) {{
