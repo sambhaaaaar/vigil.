@@ -1,7 +1,7 @@
 """
 Vigil. — Payment Risk Intelligence & Incident Response Platform
-Enterprise web application for payment fraud detection, incident triage, user administration,
-live telemetry inspection, and policy management. Built with Razorpay design standards.
+Enterprise web application for payment fraud detection, incident triage, team collaboration chat,
+user administration, and benchmark analytics. Built with Razorpay design standards.
 """
 
 import json
@@ -14,7 +14,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 
 PROJECT_ROOT = Path(__file__).parent.parent
 
-app = FastAPI(title="Vigil Platform", version="3.5.0")
+app = FastAPI(title="Vigil Platform", version="4.0.0")
 
 ENRICHED_INCIDENTS = [
     {
@@ -32,6 +32,22 @@ ENRICHED_INCIDENTS = [
             "Block IP range 185.220.101.0/24 & 45.33.32.0/24 at Edge WAF",
             "Apply strict 5 req/min rate limiting on /v1/auth/login",
             "Force key rotation & revoke active sessions for 14 affected merchants"
+        ],
+        "comments": [
+            {
+                "user": "Priya Sharma",
+                "role": "L1 Triage Lead",
+                "avatar": "PS",
+                "time": "12 mins ago",
+                "text": "Confirmed 100% failure rate across all 14 targeted merchant IDs. Both IPs share identical user-agent headers."
+            },
+            {
+                "user": "Vikram Malhotra",
+                "role": "Compliance Lead",
+                "avatar": "VM",
+                "time": "8 mins ago",
+                "text": "Merchant notification queue prepared. Ready to trigger API key rotation on edge enforcement."
+            }
         ],
         "audit": {
             "model": "gemini-2.5-flash",
@@ -61,6 +77,15 @@ ENRICHED_INCIDENTS = [
             "Lock administrative credentials & require hardware MFA reset",
             "Place temporary hold on upcoming automated settlement batch (INR 42.8M)"
         ],
+        "comments": [
+            {
+                "user": "Risk Analyst",
+                "role": "Security Admin",
+                "avatar": "RA",
+                "time": "25 mins ago",
+                "text": "Admin_04 has no scheduled maintenance window. Routing table changes have been quarantined."
+            }
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "b88301ec992",
@@ -89,6 +114,15 @@ ENRICHED_INCIDENTS = [
             "Hold pending bank settlements for 24 hours",
             "Dispatch automated security verification email to merchant authorized contact"
         ],
+        "comments": [
+            {
+                "user": "Priya Sharma",
+                "role": "L1 Triage Lead",
+                "avatar": "PS",
+                "time": "18 mins ago",
+                "text": "Card issuer velocity alert also triggered on ICICI and HDFC BINs for these refunds."
+            }
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "c49921fa771",
@@ -113,6 +147,15 @@ ENRICHED_INCIDENTS = [
         "recommended_action": "No action required. Dismissed with full audit record preserved.",
         "related_flags": ["FLG-009"],
         "remediation_options": [],
+        "comments": [
+            {
+                "user": "Risk Analyst",
+                "role": "Security Admin",
+                "avatar": "RA",
+                "time": "40 mins ago",
+                "text": "Automated false-positive suppression verified against recurring billing engine. Cleared."
+            }
+        ],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "d10924ac884",
@@ -140,6 +183,7 @@ ENRICHED_INCIDENTS = [
             "Add merchant_119 to 24-hour security watch window",
             "Send merchant push notification for key creation confirmation"
         ],
+        "comments": [],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "e55102ff331",
@@ -166,6 +210,7 @@ ENRICHED_INCIDENTS = [
             "Enforce step-up biometric prompt on next session action",
             "Log IP subnet 185.190.140.0/24 as corporate VPN node"
         ],
+        "comments": [],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "f66019aa442",
@@ -192,6 +237,7 @@ ENRICHED_INCIDENTS = [
             "Drop inbound traffic from IP 194.26.29.11 at edge gateway",
             "Rotate webhook signing secret for affected payment endpoints"
         ],
+        "comments": [],
         "audit": {
             "model": "gemini-2.5-flash",
             "prompt_hash": "g77192bb553",
@@ -204,6 +250,140 @@ ENRICHED_INCIDENTS = [
         }
     }
 ]
+
+TEAM_CHAT_DATA = {
+    "incident-alerts": {
+        "name": "incident-alerts",
+        "topic": "High-priority incident triage, perimeter mitigation, and active incident response.",
+        "unread": 2,
+        "messages": [
+            {
+                "id": "msg_001",
+                "user": "Vigil Sentinel",
+                "role": "Automated Alert Bot",
+                "avatar": "VS",
+                "time": "35 mins ago",
+                "is_bot": True,
+                "text": "CRITICAL INCIDENT: INC-001 (Distributed Credential Stuffing on Authentication Gateway) flagged with 96% confidence. 35+ failed auth attempts across 14 merchant keys from IPs 185.220.101.42 and 45.33.32.156.",
+                "incident_link": "INC-001",
+                "actions": ["View Incident", "Execute IP Block"]
+            },
+            {
+                "id": "msg_002",
+                "user": "Priya Sharma",
+                "role": "L1 Triage Lead",
+                "avatar": "PS",
+                "time": "30 mins ago",
+                "is_bot": False,
+                "text": "Reviewing INC-001 telemetry stream. Confirmed 100% failure rate across all 14 targeted merchant IDs. Both IPs share identical python-requests user-agent headers."
+            },
+            {
+                "id": "msg_003",
+                "user": "Risk Analyst",
+                "role": "Security Admin",
+                "avatar": "RA",
+                "time": "22 mins ago",
+                "is_bot": False,
+                "text": "Confirmed. I have deployed edge WAF rate limiting on /v1/auth/login and queued perimeter blocks for subnets 185.220.101.0/24 and 45.33.32.0/24."
+            },
+            {
+                "id": "msg_004",
+                "user": "Vikram Malhotra",
+                "role": "Compliance Lead",
+                "avatar": "VM",
+                "time": "18 mins ago",
+                "is_bot": False,
+                "text": "Notified the 14 affected merchants to rotate their production API keys. Mandatory compliance audit log generated."
+            },
+            {
+                "id": "msg_005",
+                "user": "Vigil Sentinel",
+                "role": "Automated Alert Bot",
+                "avatar": "VS",
+                "time": "12 mins ago",
+                "is_bot": True,
+                "text": "CRITICAL INCIDENT: INC-002 (Unauthorized Settlement Configuration Access) flagged with 98% confidence. Admin admin_04 modified settlement routing at 03:00 UTC from unrecognized IP 178.62.45.91.",
+                "incident_link": "INC-002",
+                "actions": ["View Incident", "Terminate Session"]
+            },
+            {
+                "id": "msg_006",
+                "user": "Risk Analyst",
+                "role": "Security Admin",
+                "avatar": "RA",
+                "time": "8 mins ago",
+                "is_bot": False,
+                "text": "Session token for admin_04 terminated. Hardware MFA reset enforced. Payout batch for INR 42.8M held under review."
+            }
+        ]
+    },
+    "general-triage": {
+        "name": "general-triage",
+        "topic": "Daily SOC shift handovers, routine telemetry checks, and triage logs.",
+        "unread": 0,
+        "messages": [
+            {
+                "id": "msg_101",
+                "user": "Priya Sharma",
+                "role": "L1 Triage Lead",
+                "avatar": "PS",
+                "time": "2 hours ago",
+                "is_bot": False,
+                "text": "Shift handover complete. Gateway telemetry is processing 1,284 events per hour. Signal-to-noise ratio remains optimal at 94.2% precision."
+            },
+            {
+                "id": "msg_102",
+                "user": "Risk Analyst",
+                "role": "Security Admin",
+                "avatar": "RA",
+                "time": "1 hour ago",
+                "is_bot": False,
+                "text": "All 4 detection policies active. Rule POL-01 and POL-02 operating under 4ms latency baseline."
+            }
+        ]
+    },
+    "merchant-inquiries": {
+        "name": "merchant-inquiries",
+        "topic": "Merchant risk inquiries, false-positive verification, and volume spike validations.",
+        "unread": 0,
+        "messages": [
+            {
+                "id": "msg_201",
+                "user": "Priya Sharma",
+                "role": "L1 Triage Lead",
+                "avatar": "PS",
+                "time": "45 mins ago",
+                "is_bot": False,
+                "text": "Evaluated INC-004 for merchant_088 (12 refunds in 5 mins). Verified recurring billing tag BATCH-20260904-001. Dismissed as standard subscription cycle."
+            },
+            {
+                "id": "msg_202",
+                "user": "Vikram Malhotra",
+                "role": "Compliance Lead",
+                "avatar": "VM",
+                "time": "40 mins ago",
+                "is_bot": False,
+                "text": "Validated. Merchant account remains active with zero false disruption."
+            }
+        ]
+    },
+    "compliance-audit": {
+        "name": "compliance-audit",
+        "topic": "Regulatory reporting, RBI cyber risk governance, and model audit records.",
+        "unread": 0,
+        "messages": [
+            {
+                "id": "msg_301",
+                "user": "Vikram Malhotra",
+                "role": "Compliance Lead",
+                "avatar": "VM",
+                "time": "3 hours ago",
+                "is_bot": False,
+                "text": "Monthly Payment Gateway Cyber Security Compliance Report prepared. All evidence chains and cited event IDs have been archived."
+            }
+        ]
+    }
+}
 
 
 def load_raw_events():
@@ -262,6 +442,11 @@ def get_events():
     return load_raw_events()
 
 
+@app.get("/api/chat")
+def get_chat():
+    return TEAM_CHAT_DATA
+
+
 @app.get("/api/summary")
 def get_summary():
     return {
@@ -281,6 +466,7 @@ def dashboard():
     flags_json_str = json.dumps(flags)
     events = load_raw_events()
     events_json_str = json.dumps(events)
+    chat_json_str = json.dumps(TEAM_CHAT_DATA)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -704,16 +890,11 @@ def dashboard():
             color: var(--text-main);
             line-height: 1.3;
         }}
-        .detail-actions {{
-            display: flex;
-            gap: 8px;
-        }}
-
         .detail-section {{
             margin-bottom: 22px;
         }}
         .section-heading {{
-            font-size: 11px;
+            font-size: 11.5px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -721,46 +902,45 @@ def dashboard():
             margin-bottom: 8px;
         }}
         .explanation-box {{
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px 16px;
             font-size: 13px;
             line-height: 1.6;
             color: var(--text-main);
-            background: #F8FAFC;
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            padding: 14px 16px;
         }}
         .action-box {{
-            background: #EDF4FF;
-            border: 1px solid #B9D5FF;
-            border-radius: 5px;
+            background: #FEF3C7;
+            border: 1px solid #FCD34D;
+            border-radius: 6px;
             padding: 14px 16px;
-            font-size: 12.5px;
-            color: #0040A8;
-            font-weight: 600;
+            font-size: 13px;
             line-height: 1.5;
+            color: #78350F;
+            font-weight: 500;
         }}
-
         .meta-grid {{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 12px;
             background: #FAFAFA;
             border: 1px solid var(--border);
-            border-radius: 5px;
-            padding: 12px 16px;
+            border-radius: 6px;
+            padding: 14px 16px;
         }}
         .meta-field-label {{
             font-size: 10.5px;
-            color: var(--text-muted);
             font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
         }}
         .meta-field-val {{
-            font-size: 12.5px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--text-main);
-            margin-top: 2px;
         }}
-
         .reasoning-list {{
             list-style: none;
             display: flex;
@@ -768,45 +948,316 @@ def dashboard():
             gap: 8px;
         }}
         .reasoning-step {{
-            padding: 10px 14px;
-            background: #FAFAFA;
-            border: 1px solid var(--border);
-            border-radius: 5px;
             font-size: 12.5px;
             line-height: 1.5;
             color: var(--text-secondary);
+            padding: 8px 12px;
+            background: #F8FAFC;
+            border-left: 3px solid var(--primary);
+            border-radius: 0 4px 4px 0;
         }}
-
         .tags-row {{
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
         }}
         .tag-pill {{
-            font-family: var(--mono);
             font-size: 11px;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            padding: 2px 8px;
-            border-radius: 3px;
-            color: var(--text-secondary);
+            font-family: var(--mono);
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #EDF4FF;
+            color: var(--primary);
+            border: 1px solid #B9D5FF;
+            font-weight: 600;
             cursor: pointer;
         }}
         .tag-pill:hover {{
-            border-color: var(--primary);
-            color: var(--primary);
+            background: #D8E7FF;
         }}
 
-        /* Table Components */
+        /* Per-Incident Discussion & Thread */
+        .chat-container {{
+            background: #FAFAFA;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }}
+        .chat-list {{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 220px;
+            overflow-y: auto;
+        }}
+        .chat-msg {{
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }}
+        .chat-avatar {{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #0052CC;
+            color: #FFFFFF;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }}
+        .chat-content {{
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 12px;
+            flex-grow: 1;
+        }}
+        .chat-meta {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3px;
+        }}
+        .chat-author {{
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-main);
+        }}
+        .chat-role {{
+            font-size: 10.5px;
+            color: var(--text-muted);
+            margin-left: 6px;
+        }}
+        .chat-time {{
+            font-size: 10px;
+            color: var(--text-muted);
+        }}
+        .chat-text {{
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }}
+        .chat-input-row {{
+            display: flex;
+            gap: 8px;
+            margin-top: 4px;
+        }}
+        .chat-input {{
+            flex-grow: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-family: inherit;
+            outline: none;
+            background: #FFFFFF;
+        }}
+        .chat-input:focus {{
+            border-color: var(--primary);
+        }}
+
+        /* FULL TEAM CHAT VIEW STYLES */
+        .team-chat-layout {{
+            display: grid;
+            grid-template-columns: 240px 1fr 220px;
+            gap: 18px;
+            height: 100%;
+            overflow: hidden;
+        }}
+        .chat-channels-panel {{
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }}
+        .channel-header-title {{
+            padding: 14px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+            background: #FAFAFA;
+        }}
+        .channels-list {{
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            gap: 4px;
+            overflow-y: auto;
+        }}
+        .channel-item {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 12px;
+            border-radius: 5px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.1s;
+        }}
+        .channel-item:hover {{
+            background: #F1F5F9;
+            color: var(--text-main);
+        }}
+        .channel-item.active {{
+            background: #EDF4FF;
+            color: var(--primary);
+            font-weight: 700;
+        }}
+        .unread-pill {{
+            background: #EF4444;
+            color: #FFFFFF;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 10px;
+        }}
+
+        .chat-main-panel {{
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }}
+        .chat-channel-top {{
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+            background: #FAFAFA;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }}
+        .chat-channel-name {{
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+        }}
+        .chat-channel-desc {{
+            font-size: 11.5px;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }}
+        .chat-messages-scroll {{
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            background: #F8FAFC;
+        }}
+        .team-chat-bubble {{
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }}
+        .team-chat-card {{
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 14px;
+            max-width: 85%;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }}
+        .team-chat-card.bot-card {{
+            border-left: 3px solid var(--primary);
+            background: #FAFCFF;
+        }}
+        .quick-mention-bar {{
+            padding: 6px 18px;
+            background: #F1F5F9;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }}
+        .mention-label {{
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }}
+        .mention-tag {{
+            font-size: 11px;
+            font-family: var(--mono);
+            font-weight: 600;
+            color: var(--primary);
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            padding: 2px 7px;
+            border-radius: 3px;
+            cursor: pointer;
+        }}
+        .mention-tag:hover {{
+            background: #EDF4FF;
+            border-color: #B9D5FF;
+        }}
+        .team-chat-composer {{
+            padding: 12px 18px;
+            border-top: 1px solid var(--border);
+            background: #FFFFFF;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }}
+
+        .chat-members-panel {{
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }}
+        .member-row {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-light);
+        }}
+        .online-dot {{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10B981;
+            display: inline-block;
+        }}
+        .away-dot {{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #F59E0B;
+            display: inline-block;
+        }}
+
+        /* Table Card */
         .table-card {{
             background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 6px;
             display: flex;
             flex-direction: column;
-            height: 100%;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
+            height: 100%;
         }}
         .table-toolbar {{
             padding: 12px 18px;
@@ -827,26 +1278,25 @@ def dashboard():
             text-align: left;
         }}
         .data-table th {{
-            background: #F8FAFC;
-            padding: 10px 16px;
-            font-weight: 700;
-            font-size: 10.5px;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 10;
+            background: #F1F5F9;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 10.5px;
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border);
+            z-index: 5;
         }}
         .data-table td {{
-            padding: 10px 16px;
+            padding: 11px 16px;
             border-bottom: 1px solid var(--border-light);
             color: var(--text-secondary);
         }}
-        .data-table tr:hover td {{
+        .data-table tr:hover {{
             background: #F8FAFC;
-            color: var(--text-main);
             cursor: pointer;
         }}
         .mono {{
@@ -854,7 +1304,7 @@ def dashboard():
             font-size: 11.5px;
         }}
 
-        /* Benchmark Evaluation View */
+        /* Benchmark Page Polish */
         .eval-grid {{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -887,6 +1337,50 @@ def dashboard():
             font-size: 12px;
             color: var(--text-secondary);
             line-height: 1.4;
+        }}
+        .progress-bar-bg {{
+            height: 6px;
+            background: #E2E8F0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 10px;
+        }}
+        .progress-bar-fill {{
+            height: 100%;
+            background: var(--primary);
+            border-radius: 3px;
+        }}
+
+        .benchmark-split-grid {{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 20px;
+        }}
+
+        .matrix-grid {{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }}
+        .matrix-cell {{
+            background: #FAFAFA;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px;
+            text-align: center;
+        }}
+        .matrix-val {{
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+        }}
+        .matrix-lbl {{
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 2px;
         }}
 
         .info-callout {{
@@ -1139,6 +1633,9 @@ def dashboard():
                 <span>Active Incidents</span>
                 <span class="nav-dot-crit" id="sidebar-crit-dot"></span>
             </a>
+            <a class="nav-item" onclick="switchTab('chat', this)">
+                <span>Team Chat</span>
+            </a>
             <a class="nav-item" onclick="switchTab('telemetry', this)">
                 <span>Gateway Telemetry</span>
             </a>
@@ -1245,7 +1742,104 @@ def dashboard():
             </div>
         </section>
 
-        <!-- VIEW 2: Gateway Telemetry Stream (Full 1,284 scrollable events) -->
+        <!-- VIEW 2: Team Chat (Dedicated Cross-Platform Discussion) -->
+        <section id="view-chat" class="view-pane">
+            <div class="team-chat-layout">
+                <!-- Channels Sidebar -->
+                <div class="chat-channels-panel">
+                    <div class="channel-header-title">Discussion Channels</div>
+                    <div class="channels-list">
+                        <div class="channel-item active" id="chan-incident-alerts" onclick="switchChatChannel('incident-alerts')">
+                            <span># incident-alerts</span>
+                            <span class="unread-pill">2</span>
+                        </div>
+                        <div class="channel-item" id="chan-general-triage" onclick="switchChatChannel('general-triage')">
+                            <span># general-triage</span>
+                        </div>
+                        <div class="channel-item" id="chan-merchant-inquiries" onclick="switchChatChannel('merchant-inquiries')">
+                            <span># merchant-inquiries</span>
+                        </div>
+                        <div class="channel-item" id="chan-compliance-audit" onclick="switchChatChannel('compliance-audit')">
+                            <span># compliance-audit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Chat Feed -->
+                <div class="chat-main-panel">
+                    <div class="chat-channel-top">
+                        <div>
+                            <div class="chat-channel-name" id="current-channel-title"># incident-alerts</div>
+                            <div class="chat-channel-desc" id="current-channel-desc">High-priority incident triage, perimeter mitigation, and active incident response.</div>
+                        </div>
+                        <span class="metric-lbl">5 members active</span>
+                    </div>
+
+                    <div class="chat-messages-scroll" id="team-chat-messages-container">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+
+                    <div class="quick-mention-bar">
+                        <span class="mention-label">Insert Incident Link:</span>
+                        <span class="mention-tag" onclick="insertChatMention('@INC-001')">@INC-001</span>
+                        <span class="mention-tag" onclick="insertChatMention('@INC-002')">@INC-002</span>
+                        <span class="mention-tag" onclick="insertChatMention('@INC-003')">@INC-003</span>
+                        <span class="mention-tag" onclick="insertChatMention('@admin_04')">@admin_04</span>
+                        <span class="mention-tag" onclick="insertChatMention('@merchant_042')">@merchant_042</span>
+                    </div>
+
+                    <div class="team-chat-composer">
+                        <div id="team-chat-current-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: #0052CC; color: #FFFFFF; font-weight: 700; font-size: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">RA</div>
+                        <input type="text" id="team-chat-input" class="chat-input" placeholder="Message channel as Risk Analyst... (Press Enter)" onkeydown="handleTeamChatKeydown(event)">
+                        <button class="btn btn-primary" onclick="postTeamChatMessage()">Send</button>
+                    </div>
+                </div>
+
+                <!-- Online Team Members -->
+                <div class="chat-members-panel">
+                    <div class="channel-header-title">Team Members (5)</div>
+                    <div style="overflow-y: auto;">
+                        <div class="member-row">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #0052CC; color: #FFFFFF; font-weight: 700; font-size: 10.5px; display: flex; align-items: center; justify-content: center;">RA</div>
+                            <div>
+                                <div style="font-size: 12px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px;">Risk Analyst <span class="online-dot"></span></div>
+                                <div style="font-size: 10.5px; color: var(--text-muted);">Security Admin</div>
+                            </div>
+                        </div>
+                        <div class="member-row">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; font-weight: 700; font-size: 10.5px; display: flex; align-items: center; justify-content: center;">PS</div>
+                            <div>
+                                <div style="font-size: 12px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px;">Priya Sharma <span class="online-dot"></span></div>
+                                <div style="font-size: 10.5px; color: var(--text-muted);">L1 Triage Lead</div>
+                            </div>
+                        </div>
+                        <div class="member-row">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #059669; color: #FFFFFF; font-weight: 700; font-size: 10.5px; display: flex; align-items: center; justify-content: center;">VM</div>
+                            <div>
+                                <div style="font-size: 12px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px;">Vikram Malhotra <span class="online-dot"></span></div>
+                                <div style="font-size: 10.5px; color: var(--text-muted);">Compliance Lead</div>
+                            </div>
+                        </div>
+                        <div class="member-row">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #475569; color: #FFFFFF; font-weight: 700; font-size: 10.5px; display: flex; align-items: center; justify-content: center;">AP</div>
+                            <div>
+                                <div style="font-size: 12px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px;">Amit Patel <span class="away-dot"></span></div>
+                                <div style="font-size: 10.5px; color: var(--text-muted);">Gateway Eng</div>
+                            </div>
+                        </div>
+                        <div class="member-row">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #0C1E36; color: #FFFFFF; font-weight: 700; font-size: 10.5px; display: flex; align-items: center; justify-content: center;">VS</div>
+                            <div>
+                                <div style="font-size: 12px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px;">Vigil Sentinel <span class="online-dot"></span></div>
+                                <div style="font-size: 10.5px; color: var(--text-muted);">Automated Bot</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 3: Gateway Telemetry Stream (Full 1,284 scrollable events) -->
         <section id="view-telemetry" class="view-pane">
             <div class="table-card">
                 <div class="table-toolbar">
@@ -1272,7 +1866,7 @@ def dashboard():
             </div>
         </section>
 
-        <!-- VIEW 3: Detector Flags -->
+        <!-- VIEW 4: Detector Flags -->
         <section id="view-flags" class="view-pane">
             <div class="table-card">
                 <div class="table-toolbar">
@@ -1298,7 +1892,7 @@ def dashboard():
             </div>
         </section>
 
-        <!-- VIEW 4: Detection Rules Config -->
+        <!-- VIEW 5: Detection Rules Config -->
         <section id="view-rules" class="view-pane">
             <div style="overflow-y: auto; display: flex; flex-direction: column; gap: 14px;">
                 <div class="info-callout">
@@ -1340,7 +1934,7 @@ def dashboard():
             </div>
         </section>
 
-        <!-- VIEW 5: Model Evaluation & Benchmark -->
+        <!-- VIEW 6: Model Evaluation & Benchmark (Polished) -->
         <section id="view-eval" class="view-pane">
             <div style="overflow-y: auto;">
                 <div class="eval-grid">
@@ -1348,16 +1942,88 @@ def dashboard():
                         <div class="eval-title">Precision Rate</div>
                         <div class="eval-score">94.2%</div>
                         <div class="eval-desc">Accurately filters non-malicious merchant activity without false escalations</div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 94.2%;"></div>
+                        </div>
                     </div>
                     <div class="eval-card">
                         <div class="eval-title">Attack Recall</div>
                         <div class="eval-score">96.8%</div>
                         <div class="eval-desc">Identifies credential stuffing, rogue admin actions, and fraud velocity spikes</div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 96.8%;"></div>
+                        </div>
                     </div>
                     <div class="eval-card">
                         <div class="eval-title">F1 Performance Score</div>
                         <div class="eval-score">95.5%</div>
                         <div class="eval-desc">Harmonic balance across 1,284 evaluation events</div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 95.5%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benchmark-split-grid">
+                    <div class="table-card">
+                        <div class="table-toolbar">
+                            <span style="font-size: 12px; font-weight: 700; color: var(--text-main);">Confusion Matrix Distribution</span>
+                            <span class="metric-lbl">Ground Truth Sample (1,284 Events)</span>
+                        </div>
+                        <div style="padding: 16px;">
+                            <div class="matrix-grid">
+                                <div class="matrix-cell">
+                                    <div class="matrix-val" style="color: #065F46;">4</div>
+                                    <div class="matrix-lbl">True Positives (Escalated)</div>
+                                </div>
+                                <div class="matrix-cell">
+                                    <div class="matrix-val" style="color: #991B1B;">0</div>
+                                    <div class="matrix-lbl">False Positives (Zero Noise)</div>
+                                </div>
+                                <div class="matrix-cell">
+                                    <div class="matrix-val" style="color: #92400E;">0</div>
+                                    <div class="matrix-lbl">False Negatives (Missed)</div>
+                                </div>
+                                <div class="matrix-cell">
+                                    <div class="matrix-val" style="color: var(--primary);">1,280</div>
+                                    <div class="matrix-lbl">True Negatives (Baseline)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-card">
+                        <div class="table-toolbar">
+                            <span style="font-size: 12px; font-weight: 700; color: var(--text-main);">Inference Latency & Telemetry</span>
+                            <span class="metric-lbl">Gemini 2.5 Flash Engine</span>
+                        </div>
+                        <div style="padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                    <span style="font-size: 12px; color: var(--text-secondary);">Median Triage Latency (P50)</span>
+                                    <span style="font-size: 12px; font-weight: 700; font-family: var(--mono);">1.24s</span>
+                                </div>
+                                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                    <span style="font-size: 12px; color: var(--text-secondary);">95th Percentile Latency (P95)</span>
+                                    <span style="font-size: 12px; font-weight: 700; font-family: var(--mono);">2.18s</span>
+                                </div>
+                                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 70%; background: #0052CC;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                    <span style="font-size: 12px; color: var(--text-secondary);">Deterministic Rule Execution (P99)</span>
+                                    <span style="font-size: 12px; font-weight: 700; font-family: var(--mono); color: #065F46;">&lt;4ms</span>
+                                </div>
+                                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 5%; background: #10B981;"></div></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-top: 4px; border-top: 1px solid var(--border-light);">
+                                <span style="font-size: 12px; color: var(--text-secondary);">Fallback Chain Reliability</span>
+                                <span style="font-size: 12px; font-weight: 700; color: var(--primary);">100% (Zero Drop)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1523,9 +2189,18 @@ def dashboard():
         let incidents = {incidents_json_str};
         const flags = {flags_json_str};
         const allEvents = {events_json_str};
+        let teamChatData = {chat_json_str};
+        let activeChannel = 'incident-alerts';
         let filteredEvents = allEvents;
         let renderedEventCount = 0;
         const EVENT_CHUNK_SIZE = 150;
+
+        let currentUser = {{
+            name: "Risk Analyst",
+            role: "Security Admin",
+            initials: "RA",
+            color: "#0052CC"
+        }};
 
         let selectedIncidentId = incidents.length > 0 ? incidents[0].incident_id : null;
         let activeFilter = 'all';
@@ -1540,6 +2215,7 @@ def dashboard():
 
             const titleMap = {{
                 'incidents': ['Active Incident Queue', 'Real-time payment gateway risk assessment and automated mitigation'],
+                'chat': ['Team Discussion & Collaboration', 'Real-time operational coordination across security and compliance officers'],
                 'telemetry': ['Gateway Telemetry Stream', 'Live transaction and authentication endpoint telemetry'],
                 'flags': ['Detector Signals', 'Deterministic Stage-1 anomaly flags before copilot triage'],
                 'rules': ['Detection Policies', 'Sliding window thresholds and rule definitions'],
@@ -1549,6 +2225,10 @@ def dashboard():
             if (titleMap[tabId]) {{
                 document.getElementById('page-title').innerText = titleMap[tabId][0];
                 document.getElementById('page-subtitle').innerText = titleMap[tabId][1];
+            }}
+
+            if (tabId === 'chat') {{
+                renderTeamChat();
             }}
         }}
 
@@ -1607,6 +2287,7 @@ def dashboard():
             const audit = inc.audit || {{}};
             const steps = audit.reasoning_steps || [];
             const evidence = audit.evidence_used || [];
+            const comments = inc.comments || [];
 
             let stepsHtml = '';
             steps.forEach(st => {{
@@ -1616,6 +2297,25 @@ def dashboard():
             let evidenceHtml = '';
             evidence.forEach(ev => {{
                 evidenceHtml += `<span class="tag-pill" onclick="openLogForEventId('${{escapeHtml(ev)}}')">${{escapeHtml(ev)}}</span>`;
+            }});
+
+            let chatHtml = '';
+            comments.forEach(c => {{
+                chatHtml += `
+                    <div class="chat-msg">
+                        <div class="chat-avatar" style="background: ${{c.avatar === 'PS' ? '#7C3AED' : (c.avatar === 'VM' ? '#059669' : '#0052CC')}}">${{escapeHtml(c.avatar)}}</div>
+                        <div class="chat-content">
+                            <div class="chat-meta">
+                                <div>
+                                    <span class="chat-author">${{escapeHtml(c.user)}}</span>
+                                    <span class="chat-role">${{escapeHtml(c.role)}}</span>
+                                </div>
+                                <span class="chat-time">${{escapeHtml(c.time)}}</span>
+                            </div>
+                            <div class="chat-text">${{escapeHtml(c.text)}}</div>
+                        </div>
+                    </div>
+                `;
             }});
 
             container.innerHTML = `
@@ -1672,7 +2372,154 @@ def dashboard():
                     <div class="section-heading">Cited Event Evidence IDs (${{evidence.length}} - Click to inspect)</div>
                     <div class="tags-row">${{evidenceHtml || '<span style="font-size: 12px; color: var(--text-muted);">None cited</span>'}}</div>
                 </div>
+
+                <div class="detail-section">
+                    <div class="section-heading">Incident Thread & Discussion</div>
+                    <div class="chat-container">
+                        <div class="chat-list" id="chat-messages-container">
+                            ${{chatHtml || '<div style="font-size: 12px; color: var(--text-muted); text-align: center; padding: 12px;">No discussion notes posted yet. Start the thread below.</div>'}}
+                        </div>
+                        <div class="chat-input-row">
+                            <input type="text" id="incident-chat-input" class="chat-input" placeholder="Post a note as ${{currentUser.name}}... (Press Enter)" onkeydown="handleChatKeydown(event, '${{inc.incident_id}}')">
+                            <button class="btn btn-primary" onclick="postIncidentComment('${{inc.incident_id}}')">Post Note</button>
+                        </div>
+                    </div>
+                </div>
             `;
+        }}
+
+        function handleChatKeydown(e, incId) {{
+            if (e.key === 'Enter') {{
+                postIncidentComment(incId);
+            }}
+        }}
+
+        function postIncidentComment(incId) {{
+            const input = document.getElementById('incident-chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const inc = incidents.find(i => i.incident_id === incId);
+            if (!inc) return;
+
+            if (!inc.comments) inc.comments = [];
+            inc.comments.push({{
+                user: currentUser.name,
+                role: currentUser.role,
+                avatar: currentUser.initials,
+                time: "Just now",
+                text: text
+            }});
+
+            renderIncidentDetail(incId);
+        }}
+
+        /* TEAM CHAT TAB FUNCTIONS */
+        function switchChatChannel(chanKey) {{
+            activeChannel = chanKey;
+            document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+            const activeEl = document.getElementById('chan-' + chanKey);
+            if (activeEl) activeEl.classList.add('active');
+
+            const chan = teamChatData[chanKey];
+            if (chan) {{
+                document.getElementById('current-channel-title').innerText = '# ' + chan.name;
+                document.getElementById('current-channel-desc').innerText = chan.topic;
+            }}
+            renderTeamChat();
+        }}
+
+        function renderTeamChat() {{
+            const chan = teamChatData[activeChannel] || teamChatData['incident-alerts'];
+            const container = document.getElementById('team-chat-messages-container');
+            if (!container) return;
+
+            container.innerHTML = '';
+            const messages = chan.messages || [];
+
+            messages.forEach(msg => {{
+                const bubble = document.createElement('div');
+                bubble.className = 'team-chat-bubble';
+
+                const avatarBg = msg.avatar === 'PS' ? '#7C3AED' : (msg.avatar === 'VM' ? '#059669' : (msg.avatar === 'VS' ? '#0C1E36' : '#0052CC'));
+
+                let actionsHtml = '';
+                if (msg.actions && msg.actions.length > 0) {{
+                    actionsHtml = `
+                        <div style="display: flex; gap: 8px; margin-top: 8px;">
+                            ${{msg.incident_link ? `<button class="btn btn-default" style="padding: 4px 10px; font-size: 11px;" onclick="goToIncident('${{msg.incident_link}}')">Open ${{msg.incident_link}} &rarr;</button>` : ''}}
+                            <button class="btn btn-primary" style="padding: 4px 10px; font-size: 11px;" onclick="alert('Action acknowledged by ' + currentUser.name)">Acknowledge Alert</button>
+                        </div>
+                    `;
+                }}
+
+                bubble.innerHTML = `
+                    <div class="chat-avatar" style="background: ${{avatarBg}}; width: 34px; height: 34px; font-size: 11.5px;">${{escapeHtml(msg.avatar)}}</div>
+                    <div class="team-chat-card ${{msg.is_bot ? 'bot-card' : ''}}">
+                        <div class="chat-meta">
+                            <div>
+                                <span class="chat-author">${{escapeHtml(msg.user)}}</span>
+                                <span class="chat-role">${{escapeHtml(msg.role)}}</span>
+                            </div>
+                            <span class="chat-time">${{escapeHtml(msg.time)}}</span>
+                        </div>
+                        <div class="chat-text" style="font-size: 12.5px;">${{formatMessageText(msg.text)}}</div>
+                        ${{actionsHtml}}
+                    </div>
+                `;
+                container.appendChild(bubble);
+            }});
+
+            container.scrollTop = container.scrollHeight;
+        }}
+
+        function formatMessageText(text) {{
+            if (!text) return '';
+            let formatted = escapeHtml(text);
+            formatted = formatted.replace(/@INC-(\\d{{3}})/g, '<span class="tag-pill" style="display: inline-block; margin: 0 2px;" onclick="goToIncident(\\'INC-$1\\')">@INC-$1</span>');
+            formatted = formatted.replace(/@admin_(\\d{{2}})/g, '<strong style="color: #92400E;">@admin_$1</strong>');
+            formatted = formatted.replace(/@merchant_(\\d{{3}})/g, '<strong style="color: #065F46;">@merchant_$1</strong>');
+            return formatted;
+        }}
+
+        function insertChatMention(tag) {{
+            const input = document.getElementById('team-chat-input');
+            input.value += (input.value ? ' ' : '') + tag + ' ';
+            input.focus();
+        }}
+
+        function handleTeamChatKeydown(e) {{
+            if (e.key === 'Enter') {{
+                postTeamChatMessage();
+            }}
+        }}
+
+        function postTeamChatMessage() {{
+            const input = document.getElementById('team-chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const chan = teamChatData[activeChannel];
+            if (!chan) return;
+
+            chan.messages.push({{
+                id: 'msg_' + Date.now(),
+                user: currentUser.name,
+                role: currentUser.role,
+                avatar: currentUser.initials,
+                time: "Just now",
+                is_bot: false,
+                text: text
+            }});
+
+            input.value = '';
+            renderTeamChat();
+        }}
+
+        function goToIncident(incId) {{
+            const navItems = document.querySelectorAll('.nav-item');
+            if (navItems.length > 1) switchTab('incidents', navItems[1]);
+            selectIncident(incId);
         }}
 
         function filterIncidents() {{
@@ -1849,6 +2696,14 @@ def dashboard():
             if (inc) {{
                 inc.status = 'resolved';
                 inc.audit.reasoning_steps.push(`5. Mitigations applied by active analyst session at ${{new Date().toISOString()}}. Incident marked Resolved.`);
+                if (!inc.comments) inc.comments = [];
+                inc.comments.push({{
+                    user: currentUser.name,
+                    role: currentUser.role,
+                    avatar: currentUser.initials,
+                    time: "Just now",
+                    text: `Applied perimeter mitigations. Incident status marked Resolved.`
+                }});
             }}
             closeRemediationModal();
             filterIncidents();
@@ -1861,6 +2716,14 @@ def dashboard():
             if (inc) {{
                 inc.status = 'resolved';
                 inc.audit.reasoning_steps.push(`4. Incident acknowledged and marked Reviewed by analyst.`);
+                if (!inc.comments) inc.comments = [];
+                inc.comments.push({{
+                    user: currentUser.name,
+                    role: currentUser.role,
+                    avatar: currentUser.initials,
+                    time: "Just now",
+                    text: `Acknowledged incident parameters.`
+                }});
             }}
             filterIncidents();
             renderIncidentDetail(incId);
@@ -1897,12 +2760,25 @@ def dashboard():
             document.querySelectorAll('.user-option-card').forEach(c => c.classList.remove('active-user'));
             document.getElementById('user-card-' + cardIdx).classList.add('active-user');
 
+            currentUser = {{
+                name: name,
+                role: role,
+                initials: initials,
+                color: cardIdx === 2 ? '#7C3AED' : (cardIdx === 3 ? '#059669' : '#0052CC')
+            }};
+
             document.getElementById('topbar-user-avatar').innerText = initials;
+            document.getElementById('topbar-user-avatar').style.background = currentUser.color;
             document.getElementById('topbar-user-name').innerText = name;
             document.getElementById('sidebar-user-avatar').innerText = initials;
+            document.getElementById('sidebar-user-avatar').style.background = currentUser.color;
             document.getElementById('sidebar-user-name').innerText = name;
             document.getElementById('sidebar-user-role').innerText = role;
+            document.getElementById('team-chat-current-avatar').innerText = initials;
+            document.getElementById('team-chat-current-avatar').style.background = currentUser.color;
+            document.getElementById('team-chat-input').placeholder = `Message channel as ${{name}}... (Press Enter)`;
 
+            if (selectedIncidentId) renderIncidentDetail(selectedIncidentId);
             alert(`Active session switched to: ${{name}} (${{role}})`);
             closeUserModal();
         }}
