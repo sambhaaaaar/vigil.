@@ -1,0 +1,319 @@
+[
+  {
+    "flag_id": "FLG-001",
+    "rule": "CREDENTIAL_STUFFING",
+    "severity_hint": "high",
+    "events": [
+      "evt_0019",
+      "evt_0020",
+      "evt_0022",
+      "evt_0023",
+      "evt_0025",
+      "evt_0028",
+      "evt_0029",
+      "evt_0033",
+      "evt_0034",
+      "evt_0035"
+    ],
+    "evidence": {
+      "ip": "185.220.101.42",
+      "failed_count": 10,
+      "total_attempts": 10,
+      "unique_actors_targeted": 8,
+      "actor_ids": [
+        "rzp_key_7a607acb4b93",
+        "rzp_key_ffc9687bec3d",
+        "rzp_key_fdf7c7eff542",
+        "rzp_key_4133bc3fd8ea",
+        "rzp_key_b4efd80d1f79",
+        "rzp_key_70dcd96aa4c4",
+        "rzp_key_56d1404001b5",
+        "rzp_key_d7165147b486"
+      ],
+      "window_start": "2026-09-04T02:10:38+00:00",
+      "window_end": "2026-09-04T02:15:23+00:00",
+      "window_minutes": 10,
+      "user_agents": [
+        "python-requests/2.28.0"
+      ]
+    },
+    "timestamp": "2026-09-04T02:10:38+00:00"
+  },
+  {
+    "flag_id": "FLG-002",
+    "rule": "CREDENTIAL_STUFFING",
+    "severity_hint": "high",
+    "events": [
+      "evt_0021",
+      "evt_0024",
+      "evt_0026",
+      "evt_0027",
+      "evt_0030",
+      "evt_0031",
+      "evt_0032",
+      "evt_0038",
+      "evt_0041",
+      "evt_0043"
+    ],
+    "evidence": {
+      "ip": "45.33.32.156",
+      "failed_count": 10,
+      "total_attempts": 10,
+      "unique_actors_targeted": 7,
+      "actor_ids": [
+        "rzp_key_265fb6dc48de",
+        "rzp_key_e57b59a37879",
+        "rzp_key_f97f1521069c",
+        "rzp_key_e1fe9fdd8872",
+        "rzp_key_70dcd96aa4c4",
+        "rzp_key_009d72459e54",
+        "rzp_key_782b96ac4a58"
+      ],
+      "window_start": "2026-09-04T02:10:57+00:00",
+      "window_end": "2026-09-04T02:17:07+00:00",
+      "window_minutes": 10,
+      "user_agents": [
+        "python-requests/2.28.0"
+      ]
+    },
+    "timestamp": "2026-09-04T02:10:57+00:00"
+  },
+  {
+    "flag_id": "FLG-003",
+    "rule": "ADMIN_ANOMALY",
+    "severity_hint": "critical",
+    "events": [
+      "evt_0066"
+    ],
+    "evidence": {
+      "admin_id": "admin_04",
+      "endpoint": "/v1/settlements/config",
+      "ip": "178.62.45.91",
+      "timestamp_hour": 3,
+      "anomaly_signals": [
+        "new_endpoint:/v1/settlements/config",
+        "unusual_hour:3:00"
+      ],
+      "known_endpoints": [
+        "/admin/dashboard",
+        "/admin/reports",
+        "/admin/support-tickets",
+        "/admin/merchants"
+      ],
+      "known_ips": [],
+      "session_metadata": {
+        "session_origin": "vpn_external",
+        "geo": "unknown"
+      }
+    },
+    "timestamp": "2026-09-04T03:05:21+00:00"
+  },
+  {
+    "flag_id": "FLG-004",
+    "rule": "ADMIN_ANOMALY",
+    "severity_hint": "critical",
+    "events": [
+      "evt_0067"
+    ],
+    "evidence": {
+      "admin_id": "admin_04",
+      "endpoint": "/admin/merchant-controls",
+      "ip": "178.62.45.91",
+      "timestamp_hour": 3,
+      "anomaly_signals": [
+        "new_endpoint:/admin/merchant-controls",
+        "unusual_hour:3:00"
+      ],
+      "known_endpoints": [
+        "/admin/dashboard",
+        "/admin/reports",
+        "/admin/support-tickets",
+        "/admin/merchants"
+      ],
+      "known_ips": [],
+      "session_metadata": {
+        "session_origin": "vpn_external",
+        "geo": "unknown"
+      }
+    },
+    "timestamp": "2026-09-04T03:07:19+00:00"
+  },
+  {
+    "flag_id": "FLG-005",
+    "rule": "ADMIN_ANOMALY",
+    "severity_hint": "critical",
+    "events": [
+      "evt_0068"
+    ],
+    "evidence": {
+      "admin_id": "admin_04",
+      "endpoint": "/admin/api-keys/rotate-all",
+      "ip": "178.62.45.91",
+      "timestamp_hour": 3,
+      "anomaly_signals": [
+        "new_endpoint:/admin/api-keys/rotate-all",
+        "unusual_hour:3:00"
+      ],
+      "known_endpoints": [
+        "/admin/dashboard",
+        "/admin/reports",
+        "/admin/support-tickets",
+        "/admin/merchants"
+      ],
+      "known_ips": [],
+      "session_metadata": {
+        "session_origin": "vpn_external",
+        "geo": "unknown"
+      }
+    },
+    "timestamp": "2026-09-04T03:09:01+00:00"
+  },
+  {
+    "flag_id": "FLG-006",
+    "rule": "ADMIN_ANOMALY",
+    "severity_hint": "critical",
+    "events": [
+      "evt_0069"
+    ],
+    "evidence": {
+      "admin_id": "admin_04",
+      "endpoint": "/admin/risk-rules/override",
+      "ip": "178.62.45.91",
+      "timestamp_hour": 3,
+      "anomaly_signals": [
+        "new_endpoint:/admin/risk-rules/override",
+        "unusual_hour:3:00"
+      ],
+      "known_endpoints": [
+        "/admin/dashboard",
+        "/admin/reports",
+        "/admin/support-tickets",
+        "/admin/merchants"
+      ],
+      "known_ips": [],
+      "session_metadata": {
+        "session_origin": "vpn_external",
+        "geo": "unknown"
+      }
+    },
+    "timestamp": "2026-09-04T03:11:25+00:00"
+  },
+  {
+    "flag_id": "FLG-007",
+    "rule": "ADMIN_ANOMALY",
+    "severity_hint": "critical",
+    "events": [
+      "evt_0070"
+    ],
+    "evidence": {
+      "admin_id": "admin_04",
+      "endpoint": "/admin/api-keys/rotate-all",
+      "ip": "178.62.45.91",
+      "timestamp_hour": 3,
+      "anomaly_signals": [
+        "new_endpoint:/admin/api-keys/rotate-all",
+        "unusual_hour:3:00"
+      ],
+      "known_endpoints": [
+        "/admin/dashboard",
+        "/admin/reports",
+        "/admin/support-tickets",
+        "/admin/merchants"
+      ],
+      "known_ips": [],
+      "session_metadata": {
+        "keys_affected": 12,
+        "session_origin": "vpn_external"
+      }
+    },
+    "timestamp": "2026-09-04T03:15:00+00:00"
+  },
+  {
+    "flag_id": "FLG-008",
+    "rule": "MERCHANT_REFUND_SPIKE",
+    "severity_hint": "high",
+    "events": [
+      "evt_0233",
+      "evt_0234",
+      "evt_0235",
+      "evt_0236",
+      "evt_0238",
+      "evt_0239",
+      "evt_0240",
+      "evt_0243",
+      "evt_0244",
+      "evt_0245",
+      "evt_0246",
+      "evt_0247",
+      "evt_0248",
+      "evt_0249",
+      "evt_0250",
+      "evt_0251",
+      "evt_0252",
+      "evt_0253"
+    ],
+    "evidence": {
+      "merchant_id": "merchant_042",
+      "recent_refund_count": 18,
+      "recent_window_minutes": 30,
+      "baseline_refund_count": 2,
+      "baseline_window_hours": 24,
+      "spike_ratio": 432.0,
+      "total_refund_amount": 134898.54,
+      "baseline_avg_amount": 515.05,
+      "refund_reasons": [
+        "order_cancelled",
+        "customer_request",
+        "duplicate_payment"
+      ],
+      "has_bulk_metadata": false,
+      "batch_ids": [],
+      "consistent_amount": false,
+      "ip_addresses": [
+        "103.60.130.155"
+      ]
+    },
+    "timestamp": "2026-09-04T19:04:09+00:00"
+  },
+  {
+    "flag_id": "FLG-009",
+    "rule": "MERCHANT_REFUND_SPIKE",
+    "severity_hint": "high",
+    "events": [
+      "evt_0177",
+      "evt_0178",
+      "evt_0179",
+      "evt_0180",
+      "evt_0181",
+      "evt_0182",
+      "evt_0183",
+      "evt_0184",
+      "evt_0185",
+      "evt_0186",
+      "evt_0187",
+      "evt_0188"
+    ],
+    "evidence": {
+      "merchant_id": "merchant_088",
+      "recent_refund_count": 12,
+      "recent_window_minutes": 30,
+      "baseline_refund_count": 0,
+      "baseline_window_hours": 24,
+      "spike_ratio": 24.0,
+      "total_refund_amount": 5988.0,
+      "baseline_avg_amount": 0,
+      "refund_reasons": [
+        "subscription_cancellation_batch"
+      ],
+      "has_bulk_metadata": true,
+      "batch_ids": [
+        "BATCH-20260904-001"
+      ],
+      "consistent_amount": true,
+      "ip_addresses": [
+        "103.58.36.189"
+      ]
+    },
+    "timestamp": "2026-09-04T14:30:00+00:00"
+  }
+]

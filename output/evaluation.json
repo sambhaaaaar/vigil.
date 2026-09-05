@@ -1,0 +1,90 @@
+{
+  "detection": {
+    "detection_recall": 1.0,
+    "attacks_caught": 3,
+    "total_attacks": 3,
+    "false_positive_flagged": true,
+    "details": {
+      "credential_stuffing": {
+        "caught": true,
+        "flags": [
+          "FLG-001",
+          "FLG-002"
+        ],
+        "events_caught": 20,
+        "events_total": 38,
+        "event_recall": 0.53
+      },
+      "admin_anomaly": {
+        "caught": true,
+        "flags": [
+          "FLG-003",
+          "FLG-004",
+          "FLG-005",
+          "FLG-006",
+          "FLG-007"
+        ],
+        "events_caught": 5,
+        "events_total": 5,
+        "event_recall": 1.0
+      },
+      "merchant_refund_spike": {
+        "caught": true,
+        "flags": [
+          "FLG-008",
+          "FLG-009"
+        ],
+        "events_caught": 18,
+        "events_total": 18,
+        "event_recall": 1.0
+      }
+    }
+  },
+  "triage": {
+    "triage_accuracy": 1.0,
+    "correct_count": 3,
+    "total": 3,
+    "false_positive_handled": true,
+    "details": {
+      "credential_stuffing": {
+        "incident_id": "INC-001",
+        "expected_severity": "escalate",
+        "actual_severity": "escalate",
+        "correct": true,
+        "confidence": 0.98,
+        "explanation_preview": "Multiple distributed IPs (185.220.101.42 and 45.33.32.156) are systematically ta"
+      },
+      "admin_anomaly": {
+        "incident_id": "INC-002",
+        "expected_severity": "escalate",
+        "actual_severity": "escalate",
+        "correct": true,
+        "confidence": 0.98,
+        "explanation_preview": "An external VPN session (IP 178.62.45.91) using admin account 'admin_04' perform"
+      },
+      "merchant_refund_spike": {
+        "incident_id": "INC-003",
+        "expected_severity": "escalate",
+        "actual_severity": "escalate",
+        "correct": true,
+        "confidence": 0.88,
+        "explanation_preview": "A significant and anomalous spike in refund activity was detected for merchant_0"
+      }
+    },
+    "false_positive": {
+      "incident_id": "INC-004",
+      "severity": "dismiss",
+      "confidence": 0.99,
+      "correctly_handled": true,
+      "explanation_preview": "An automated detection rule flagged a spike in refunds for merchant_088; however"
+    }
+  },
+  "overall": {
+    "true_positives": 3,
+    "false_negatives": 0,
+    "false_positives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  }
+}

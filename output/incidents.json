@@ -1,0 +1,226 @@
+[
+  {
+    "incident_id": "INC-001",
+    "title": "Credential Stuffing Attack on Payment API Authentication Endpoints",
+    "related_flags": [
+      "FLG-001",
+      "FLG-002"
+    ],
+    "severity": "escalate",
+    "confidence": 0.98,
+    "explanation": "Multiple distributed IPs (185.220.101.42 and 45.33.32.156) are systematically targeting multiple unique merchant API keys with rapid, repeated failed login attempts against the `/v1/auth/login` endpoint using the `python-requests` user agent. This represents an active credential stuffing campaign aimed at compromising payment infrastructure and merchant accounts.",
+    "recommended_action": "Immediately block IP addresses 185.220.101.42 and 45.33.32.156 at the edge/WAF level, enforce rate limiting on `/v1/auth/login`, and notify all affected merchant key owners (e.g., rzp_key_b4efd80d1f79, rzp_key_782b96ac4a58) to rotate their API secrets.",
+    "financial_impact": "High risk of unauthorized access to merchant payment APIs, which could lead to fraudulent transaction initiation, refund diversion, and data exfiltration across multiple merchant accounts.",
+    "attack_category": "credential_stuffing",
+    "mitre_tactic": "Credential Access",
+    "audit": {
+      "reasoning_steps": [
+        "Step 1: Analyzed FLG-001 showing 10 failed login attempts from IP 185.220.101.42 targeting 8 unique merchant actor IDs between 2026-09-04T02:10:38+00:00 and 2026-09-04T02:15:23+00:00.",
+        "Step 2: Analyzed FLG-002 showing 10 failed login attempts from IP 45.33.32.156 targeting 7 unique merchant actor IDs between 2026-09-04T02:10:57+00:00 and 2026-09-04T02:17:07+00:00.",
+        "Step 3: Correlated raw event logs (evt_0019 through evt_0043) confirming all attempts utilized the same python automation script signature (python-requests/2.28.0) against the authentication endpoint (/v1/auth/login).",
+        "Step 4: Evaluated the possibility of legitimate bulk administrative operations. Determined that high-frequency authentication attempts from unrelated external IPs targeting a wide array of distinct merchant keys concurrently is characteristic of a brute-force credential stuffing attack rather than authorized internal batch processing."
+      ],
+      "evidence_used": [
+        "evt_0019",
+        "evt_0020",
+        "evt_0021",
+        "evt_0022",
+        "evt_0023",
+        "evt_0024",
+        "evt_0025",
+        "evt_0026",
+        "evt_0027",
+        "evt_0028",
+        "evt_0029",
+        "evt_0030",
+        "evt_0031",
+        "evt_0032",
+        "evt_0033",
+        "evt_0034",
+        "evt_0035",
+        "evt_0038",
+        "evt_0041",
+        "evt_0043"
+      ],
+      "evidence_not_used": [],
+      "alternative_explanations_considered": [
+        "Could this be a legitimate bulk operation? No, legitimate merchant operations typically originate from consistent, recognized merchant IPs or internal infrastructure using authenticated tokens, whereas these requests target numerous disjointed merchant keys from external suspicious IPs using script user-agents."
+      ],
+      "confidence_factors": {
+        "supporting": [
+          "Multiple distinct target actor IDs per IP address",
+          "100% failure rate across all attempts",
+          "Identical automated user-agent strings across distinct source IPs",
+          "Synchronized timing windows indicating distributed automated tooling"
+        ],
+        "undermining": []
+      },
+      "model": "gemini-2.5-flash",
+      "prompt_hash": "f6f3ef783f97",
+      "timestamp": "2026-09-05T17:56:57.184725+00:00",
+      "llm_provider": "gemini"
+    }
+  },
+  {
+    "incident_id": "INC-002",
+    "title": "Account Takeover and Unauthorized Privileged Configuration Changes by Compromised Admin Account",
+    "related_flags": [
+      "FLG-003",
+      "FLG-004",
+      "FLG-005",
+      "FLG-006",
+      "FLG-007"
+    ],
+    "severity": "escalate",
+    "confidence": 0.98,
+    "explanation": "An external VPN session (IP 178.62.45.91) using admin account 'admin_04' performed high-privilege, anomalous actions at an unusual hour (03:00 UTC). Evidence shows the actor accessed sensitive endpoints including settlement configuration (/v1/settlements/config in evt_0066), merchant controls (/admin/merchant-controls in evt_0067), risk rule overrides (/admin/risk-rules/override in evt_0069), and executed global API key rotations affecting multiple keys (evt_0068, evt_0070). This indicates a critical admin account takeover or malicious insider activity aimed at altering core payment infrastructure controls.",
+    "recommended_action": "Immediately revoke all active sessions for admin_04, block IP 178.62.45.91 at the perimeter firewall, freeze and audit the 12 rotated API keys referenced in evt_0070, and initiate an emergency forensic review of recent changes made to settlements and risk rules.",
+    "financial_impact": "High financial and operational risk due to potential unauthorized tampering with settlement configurations, risk rule overrides, and exposure/rotation of merchant API keys affecting multiple entities.",
+    "attack_category": "account_takeover",
+    "mitre_tactic": "Credential Access / Privilege Escalation",
+    "audit": {
+      "reasoning_steps": [
+        "Step 1: Evaluated administrative anomalies originating from actor 'admin_04' across events evt_0066 through evt_0070.",
+        "Step 2: Noted that the source IP 178.62.45.91 and external VPN origin completely deviate from this account's historical baseline.",
+        "Step 3: Analyzed the targeted endpoints (/v1/settlements/config, /admin/merchant-controls, /admin/risk-rules/override, and /admin/api-keys/rotate-all), which represent critical, highly sensitive administrative boundaries.",
+        "Step 4: Confirmed high financial impact via mass API key rotation (12 keys affected in evt_0070) and risk rule manipulation, matching severe malicious intent rather than routine maintenance."
+      ],
+      "evidence_used": [
+        "evt_0066",
+        "evt_0067",
+        "evt_0068",
+        "evt_0069",
+        "evt_0070"
+      ],
+      "evidence_not_used": [],
+      "alternative_explanations_considered": [
+        "Could this be scheduled maintenance or authorized batch processing? Unlikely because the action involves a novel external IP, an off-hours execution time (03:00 UTC), and unauthorized access to risk-rule override and settlement configuration endpoints outside the user's normal operational scope."
+      ],
+      "confidence_factors": {
+        "supporting": [
+          "Multiple consecutive anomalous administrative actions in a short time window",
+          "Targeting of high-value sensitive endpoints (/admin/risk-rules/override, /v1/settlements/config)",
+          "Execution of bulk API key rotation affecting 12 keys",
+          "Unusual access time and unknown geographical origin via external VPN"
+        ],
+        "undermining": []
+      },
+      "model": "gemini-2.5-flash",
+      "prompt_hash": "30bc31bae213",
+      "timestamp": "2026-09-05T17:57:34.036732+00:00",
+      "llm_provider": "gemini"
+    }
+  },
+  {
+    "incident_id": "INC-003",
+    "title": "Merchant Refund Spike and Potential Fraud from Merchant_042",
+    "related_flags": [
+      "FLG-008"
+    ],
+    "severity": "escalate",
+    "confidence": 0.88,
+    "explanation": "A significant and anomalous spike in refund activity was detected for merchant_042, with 18 high-value refunds totaling 134,898.54 issued within a 30-minute window from IP 103.60.130.155. This represents a 432x increase over the baseline average, presenting substantial financial risk. Evidence events evt_0233 through evt_0253 demonstrate rapidly executed individual transactions rather than a bulk batch job.",
+    "recommended_action": "Temporarily suspend payout and refund capabilities for merchant_042, verify the legitimacy of transactions with the merchant principal, and inspect IP 103.60.130.155 for unauthorized access.",
+    "financial_impact": "High direct financial loss of 134,898.54 to merchant_042's operational balance or settlement pool.",
+    "attack_category": "transaction_fraud",
+    "mitre_tactic": "Impact",
+    "audit": {
+      "reasoning_steps": [
+        "Step 1: Analyzed FLG-008 indicating a merchant refund spike for merchant_042 with a spike ratio of 432.0.",
+        "Step 2: Reviewed individual event logs (evt_0233 through evt_0253) showing continuous manual-style refund calls over a short window from IP 103.60.130.155.",
+        "Step 3: Evaluated alternative explanations such as batch processing; dismissed because 'has_bulk_metadata' is false, 'batch_ids' is empty, and refund reasons and amounts are varied.",
+        "Step 4: Assessed financial impact, confirming significant exposure due to the total refund sum of 134,898.54."
+      ],
+      "evidence_used": [
+        "evt_0233",
+        "evt_0234",
+        "evt_0235",
+        "evt_0236",
+        "evt_0238",
+        "evt_0239",
+        "evt_0240",
+        "evt_0243",
+        "evt_0244",
+        "evt_0245",
+        "evt_0246",
+        "evt_0247",
+        "evt_0248",
+        "evt_0249",
+        "evt_0250",
+        "evt_0251",
+        "evt_0252",
+        "evt_0253"
+      ],
+      "evidence_not_used": [],
+      "alternative_explanations_considered": [
+        "Could this be a legitimate bulk operation? No, because bulk metadata is absent, batch IDs are empty, and transaction amounts are inconsistent."
+      ],
+      "confidence_factors": {
+        "supporting": [
+          "Extremely high spike ratio (432x baseline)",
+          "Absence of bulk processing metadata indicating automated reconciliation",
+          "Substantial financial amount in a short timeframe"
+        ],
+        "undermining": [
+          "Refund reasons are varied rather than single-coded, which can occasionally occur during manual customer support cleanups."
+        ]
+      },
+      "model": "gemini-2.5-flash",
+      "prompt_hash": "0a5bd76ee5c6",
+      "timestamp": "2026-09-05T17:58:10.260960+00:00",
+      "llm_provider": "gemini"
+    }
+  },
+  {
+    "incident_id": "INC-004",
+    "title": "Benign Refund Spike Due to Automated Subscription Batch Processing for Merchant_088",
+    "related_flags": [
+      "FLG-009"
+    ],
+    "severity": "dismiss",
+    "confidence": 0.99,
+    "explanation": "An automated detection rule flagged a spike in refunds for merchant_088; however, analysis of the raw log entries (evt_0177 through evt_0188) reveals this is a legitimate batch operation. Every event contains consistent metadata indicating an 'automated_batch_system' processing 'subscription_cancellation_batch' activities with identical refund amounts of 499.0 under batch ID 'BATCH-20260904-001'. Therefore, this activity represents routine merchant operations rather than financial fraud or account compromise.",
+    "recommended_action": "Dismiss the alert as a false positive. No further action or mitigation is required for merchant_088.",
+    "financial_impact": "None. The refunds are legitimate subscription cancellations processed via official merchant channels.",
+    "attack_category": "benign_activity",
+    "mitre_tactic": "N/A",
+    "audit": {
+      "reasoning_steps": [
+        "Step 1: Reviewed the 12 events associated with flag FLG-009 involving merchant_088 issuing refunds within a 30-minute window.",
+        "Step 2: Inspected the raw event evidence (evt_0177 to evt_0188) and noted that all events share the exact same amount (499.0) and come from a single IP address (103.58.36.189).",
+        "Step 3: Examined the event metadata, confirming explicit tags such as 'bulk_operation: true', 'batch_id: BATCH-20260904-001', 'refund_reason: subscription_cancellation_batch', and 'processor: automated_batch_system'.",
+        "Step 4: Evaluated alternative explanations such as malicious mass-refunding or account takeover, but determined the structured batch metadata and uniform amounts strongly support legitimate automated operations."
+      ],
+      "evidence_used": [
+        "evt_0177",
+        "evt_0178",
+        "evt_0179",
+        "evt_0180",
+        "evt_0181",
+        "evt_0182",
+        "evt_0183",
+        "evt_0184",
+        "evt_0185",
+        "evt_0186",
+        "evt_0187",
+        "evt_0188"
+      ],
+      "evidence_not_used": [],
+      "alternative_explanations_considered": [
+        "Could this be fraudulent bulk refunding following an account takeover? Considered unlikely because the metadata explicitly details automated batch processing for subscription cancellations with uniform amounts and consistent internal batch identifiers."
+      ],
+      "confidence_factors": {
+        "supporting": [
+          "Consistent batch ID across all events",
+          "Explicit metadata indicating automated batch processing",
+          "Uniform refund amounts and reason"
+        ],
+        "undermining": []
+      },
+      "model": "gemini-2.5-flash",
+      "prompt_hash": "fb656c35f9ef",
+      "timestamp": "2026-09-05T17:58:45.839026+00:00",
+      "llm_provider": "gemini"
+    }
+  }
+]

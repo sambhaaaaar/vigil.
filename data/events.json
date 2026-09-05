@@ -1,0 +1,3004 @@
+[
+  {
+    "event_id": "evt_0001",
+    "timestamp": "2026-09-04T00:08:29.067857+00:00",
+    "actor_id": "merchant_012",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.148.50.181",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0002",
+    "timestamp": "2026-09-04T00:16:31.271435+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.118.138.32",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0003",
+    "timestamp": "2026-09-04T00:35:08.887976+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.253.21.219",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0004",
+    "timestamp": "2026-09-04T00:36:57.075257+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.227.221.93",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0005",
+    "timestamp": "2026-09-04T00:41:46.002954+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.140.108.57",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0006",
+    "timestamp": "2026-09-04T00:51:39.528280+00:00",
+    "actor_id": "merchant_003",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.179.109.88",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0007",
+    "timestamp": "2026-09-04T01:05:15.243663+00:00",
+    "actor_id": "merchant_002",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0008",
+    "timestamp": "2026-09-04T01:06:10.860236+00:00",
+    "actor_id": "merchant_002",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.21.142.76",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0009",
+    "timestamp": "2026-09-04T01:13:55.865762+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.227.221.93",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0010",
+    "timestamp": "2026-09-04T01:17:59.980731+00:00",
+    "actor_id": "merchant_017",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.59.198.75",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0011",
+    "timestamp": "2026-09-04T01:26:40.284480+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.195.207.41",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0012",
+    "timestamp": "2026-09-04T01:27:07.894699+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.253.21.219",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0013",
+    "timestamp": "2026-09-04T01:30:58.159334+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.148.50.181",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0014",
+    "timestamp": "2026-09-04T01:32:07.995889+00:00",
+    "actor_id": "merchant_001",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.163.44.137",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0015",
+    "timestamp": "2026-09-04T01:42:09.543046+00:00",
+    "actor_id": "merchant_002",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.58.36.189",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0016",
+    "timestamp": "2026-09-04T01:45:25.330660+00:00",
+    "actor_id": "merchant_007",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.7.144.51",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0017",
+    "timestamp": "2026-09-04T01:56:49.725768+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.140.108.57",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0018",
+    "timestamp": "2026-09-04T02:03:15.319052+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.54.172.69",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0019",
+    "timestamp": "2026-09-04T02:10:38+00:00",
+    "actor_id": "rzp_key_b4efd80d1f79",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0020",
+    "timestamp": "2026-09-04T02:10:40+00:00",
+    "actor_id": "rzp_key_fdf7c7eff542",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0021",
+    "timestamp": "2026-09-04T02:10:57+00:00",
+    "actor_id": "rzp_key_782b96ac4a58",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0022",
+    "timestamp": "2026-09-04T02:11:09+00:00",
+    "actor_id": "rzp_key_56d1404001b5",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0023",
+    "timestamp": "2026-09-04T02:11:19+00:00",
+    "actor_id": "rzp_key_d7165147b486",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0024",
+    "timestamp": "2026-09-04T02:11:26+00:00",
+    "actor_id": "rzp_key_009d72459e54",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0025",
+    "timestamp": "2026-09-04T02:11:48+00:00",
+    "actor_id": "rzp_key_fdf7c7eff542",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0026",
+    "timestamp": "2026-09-04T02:12:36+00:00",
+    "actor_id": "rzp_key_70dcd96aa4c4",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0027",
+    "timestamp": "2026-09-04T02:12:52+00:00",
+    "actor_id": "rzp_key_f97f1521069c",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0028",
+    "timestamp": "2026-09-04T02:12:55+00:00",
+    "actor_id": "rzp_key_ffc9687bec3d",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0029",
+    "timestamp": "2026-09-04T02:13:01+00:00",
+    "actor_id": "rzp_key_70dcd96aa4c4",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0030",
+    "timestamp": "2026-09-04T02:14:01+00:00",
+    "actor_id": "rzp_key_265fb6dc48de",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0031",
+    "timestamp": "2026-09-04T02:14:22+00:00",
+    "actor_id": "rzp_key_e1fe9fdd8872",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0032",
+    "timestamp": "2026-09-04T02:14:53+00:00",
+    "actor_id": "rzp_key_f97f1521069c",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0033",
+    "timestamp": "2026-09-04T02:15:10+00:00",
+    "actor_id": "rzp_key_ffc9687bec3d",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0034",
+    "timestamp": "2026-09-04T02:15:17+00:00",
+    "actor_id": "rzp_key_7a607acb4b93",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0035",
+    "timestamp": "2026-09-04T02:15:23+00:00",
+    "actor_id": "rzp_key_4133bc3fd8ea",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0036",
+    "timestamp": "2026-09-04T02:15:29+00:00",
+    "actor_id": "rzp_key_979ea62c8f13",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0037",
+    "timestamp": "2026-09-04T02:15:47+00:00",
+    "actor_id": "rzp_key_fdf7c7eff542",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0038",
+    "timestamp": "2026-09-04T02:15:57+00:00",
+    "actor_id": "rzp_key_782b96ac4a58",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0039",
+    "timestamp": "2026-09-04T02:16:10+00:00",
+    "actor_id": "rzp_key_f97f1521069c",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0040",
+    "timestamp": "2026-09-04T02:16:45+00:00",
+    "actor_id": "rzp_key_d7165147b486",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0041",
+    "timestamp": "2026-09-04T02:16:50+00:00",
+    "actor_id": "rzp_key_009d72459e54",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0042",
+    "timestamp": "2026-09-04T02:16:54+00:00",
+    "actor_id": "rzp_key_6a44a3783d0e",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0043",
+    "timestamp": "2026-09-04T02:17:07+00:00",
+    "actor_id": "rzp_key_e57b59a37879",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0044",
+    "timestamp": "2026-09-04T02:17:24+00:00",
+    "actor_id": "rzp_key_b4efd80d1f79",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "success",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0045",
+    "timestamp": "2026-09-04T02:17:29+00:00",
+    "actor_id": "rzp_key_009d72459e54",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0046",
+    "timestamp": "2026-09-04T02:17:40+00:00",
+    "actor_id": "rzp_key_cf00df02c937",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0047",
+    "timestamp": "2026-09-04T02:17:41+00:00",
+    "actor_id": "rzp_key_265fb6dc48de",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0048",
+    "timestamp": "2026-09-04T02:17:55+00:00",
+    "actor_id": "rzp_key_70dcd96aa4c4",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0049",
+    "timestamp": "2026-09-04T02:18:06+00:00",
+    "actor_id": "rzp_key_b4efd80d1f79",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "success",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0050",
+    "timestamp": "2026-09-04T02:18:29+00:00",
+    "actor_id": "rzp_key_b4efd80d1f79",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "success",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0051",
+    "timestamp": "2026-09-04T02:18:33+00:00",
+    "actor_id": "rzp_key_4133bc3fd8ea",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0052",
+    "timestamp": "2026-09-04T02:18:39+00:00",
+    "actor_id": "rzp_key_fb7b2a004a44",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0053",
+    "timestamp": "2026-09-04T02:19:03+00:00",
+    "actor_id": "rzp_key_009d72459e54",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0054",
+    "timestamp": "2026-09-04T02:19:38+00:00",
+    "actor_id": "rzp_key_a653989ededc",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0055",
+    "timestamp": "2026-09-04T02:19:49+00:00",
+    "actor_id": "rzp_key_8ff4d49eb33d",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "185.220.101.42",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0056",
+    "timestamp": "2026-09-04T02:19:54+00:00",
+    "actor_id": "rzp_key_a4faaec60840",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "45.33.32.156",
+    "status": "failed",
+    "metadata": {
+      "user_agent": "python-requests/2.28.0",
+      "attempt_type": "api_key_auth"
+    },
+    "_ground_truth": "credential_stuffing"
+  },
+  {
+    "event_id": "evt_0057",
+    "timestamp": "2026-09-04T02:20:53.439593+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.152.109.9",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0058",
+    "timestamp": "2026-09-04T02:21:39.579532+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.89.155.68",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0059",
+    "timestamp": "2026-09-04T02:30:31.154035+00:00",
+    "actor_id": "merchant_006",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.98.72.117",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0060",
+    "timestamp": "2026-09-04T02:33:07.510440+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.184.167.180",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0061",
+    "timestamp": "2026-09-04T02:38:11.040877+00:00",
+    "actor_id": "merchant_001",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.250.237.97",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0062",
+    "timestamp": "2026-09-04T02:44:38.511014+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.18.12.170",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0063",
+    "timestamp": "2026-09-04T02:46:06.111404+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0064",
+    "timestamp": "2026-09-04T02:53:37.429090+00:00",
+    "actor_id": "merchant_007",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.54.172.69",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0065",
+    "timestamp": "2026-09-04T03:04:45.319045+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.246.196.87",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0066",
+    "timestamp": "2026-09-04T03:05:21+00:00",
+    "actor_id": "admin_04",
+    "action": "admin_action",
+    "endpoint": "/v1/settlements/config",
+    "ip": "178.62.45.91",
+    "status": "success",
+    "metadata": {
+      "session_origin": "vpn_external",
+      "geo": "unknown"
+    },
+    "_ground_truth": "admin_anomaly"
+  },
+  {
+    "event_id": "evt_0067",
+    "timestamp": "2026-09-04T03:07:19+00:00",
+    "actor_id": "admin_04",
+    "action": "admin_action",
+    "endpoint": "/admin/merchant-controls",
+    "ip": "178.62.45.91",
+    "status": "success",
+    "metadata": {
+      "session_origin": "vpn_external",
+      "geo": "unknown"
+    },
+    "_ground_truth": "admin_anomaly"
+  },
+  {
+    "event_id": "evt_0068",
+    "timestamp": "2026-09-04T03:09:01+00:00",
+    "actor_id": "admin_04",
+    "action": "admin_action",
+    "endpoint": "/admin/api-keys/rotate-all",
+    "ip": "178.62.45.91",
+    "status": "success",
+    "metadata": {
+      "session_origin": "vpn_external",
+      "geo": "unknown"
+    },
+    "_ground_truth": "admin_anomaly"
+  },
+  {
+    "event_id": "evt_0069",
+    "timestamp": "2026-09-04T03:11:25+00:00",
+    "actor_id": "admin_04",
+    "action": "admin_action",
+    "endpoint": "/admin/risk-rules/override",
+    "ip": "178.62.45.91",
+    "status": "success",
+    "metadata": {
+      "session_origin": "vpn_external",
+      "geo": "unknown"
+    },
+    "_ground_truth": "admin_anomaly"
+  },
+  {
+    "event_id": "evt_0070",
+    "timestamp": "2026-09-04T03:15:00+00:00",
+    "actor_id": "admin_04",
+    "action": "key_rotated",
+    "endpoint": "/admin/api-keys/rotate-all",
+    "ip": "178.62.45.91",
+    "status": "success",
+    "metadata": {
+      "keys_affected": 12,
+      "session_origin": "vpn_external"
+    },
+    "_ground_truth": "admin_anomaly"
+  },
+  {
+    "event_id": "evt_0071",
+    "timestamp": "2026-09-04T03:15:13.233965+00:00",
+    "actor_id": "merchant_015",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.163.44.137",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0072",
+    "timestamp": "2026-09-04T03:32:21.309935+00:00",
+    "actor_id": "merchant_001",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.18.12.170",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0073",
+    "timestamp": "2026-09-04T03:33:06.417446+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.21.142.76",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0074",
+    "timestamp": "2026-09-04T03:34:23.744889+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.229.140.23",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0075",
+    "timestamp": "2026-09-04T03:37:02.719013+00:00",
+    "actor_id": "merchant_013",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.195.207.41",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0076",
+    "timestamp": "2026-09-04T03:41:33.866883+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.148.50.181",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0077",
+    "timestamp": "2026-09-04T03:49:01.693737+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.72.40.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0078",
+    "timestamp": "2026-09-04T03:52:28.143747+00:00",
+    "actor_id": "merchant_017",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.98.72.117",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0079",
+    "timestamp": "2026-09-04T03:56:46.765255+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.118.138.32",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0080",
+    "timestamp": "2026-09-04T04:21:30.484149+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.195.207.41",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0081",
+    "timestamp": "2026-09-04T04:24:02.357010+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.59.198.75",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0082",
+    "timestamp": "2026-09-04T04:33:15.781860+00:00",
+    "actor_id": "merchant_007",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.207.12.187",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0083",
+    "timestamp": "2026-09-04T04:33:31.401391+00:00",
+    "actor_id": "merchant_002",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.164.29.7",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0084",
+    "timestamp": "2026-09-04T04:35:37.647610+00:00",
+    "actor_id": "merchant_016",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0085",
+    "timestamp": "2026-09-04T04:45:23.792954+00:00",
+    "actor_id": "merchant_019",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0086",
+    "timestamp": "2026-09-04T04:55:17.449358+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.179.109.88",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0087",
+    "timestamp": "2026-09-04T05:03:05.764396+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.163.214.94",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0088",
+    "timestamp": "2026-09-04T05:28:48.135211+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.227.221.93",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0089",
+    "timestamp": "2026-09-04T05:31:08.421876+00:00",
+    "actor_id": "merchant_012",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.119.98.70",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0090",
+    "timestamp": "2026-09-04T05:36:28.183037+00:00",
+    "actor_id": "merchant_001",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.119.98.70",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0091",
+    "timestamp": "2026-09-04T05:42:29.320131+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.166.19.156",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0092",
+    "timestamp": "2026-09-04T05:54:53.819014+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.163.44.137",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0093",
+    "timestamp": "2026-09-04T06:05:28.403485+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.253.21.219",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0094",
+    "timestamp": "2026-09-04T06:15:14.510158+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.227.221.93",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0095",
+    "timestamp": "2026-09-04T06:35:44.881402+00:00",
+    "actor_id": "merchant_019",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.213.161.159",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0096",
+    "timestamp": "2026-09-04T06:39:03.062229+00:00",
+    "actor_id": "merchant_017",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0097",
+    "timestamp": "2026-09-04T07:00:23.077891+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0098",
+    "timestamp": "2026-09-04T07:09:37.312069+00:00",
+    "actor_id": "merchant_019",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.184.167.180",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0099",
+    "timestamp": "2026-09-04T07:13:58.649065+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.166.19.156",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0100",
+    "timestamp": "2026-09-04T07:15:19.330125+00:00",
+    "actor_id": "merchant_017",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0101",
+    "timestamp": "2026-09-04T07:31:22.899308+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.213.161.159",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0102",
+    "timestamp": "2026-09-04T07:33:56.216169+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.166.19.156",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0103",
+    "timestamp": "2026-09-04T07:45:54.428026+00:00",
+    "actor_id": "merchant_006",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.7.144.51",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0104",
+    "timestamp": "2026-09-04T07:58:00.893302+00:00",
+    "actor_id": "merchant_014",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0105",
+    "timestamp": "2026-09-04T07:59:59.271543+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.140.108.57",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0106",
+    "timestamp": "2026-09-04T08:05:39.797321+00:00",
+    "actor_id": "merchant_013",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.246.196.87",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0107",
+    "timestamp": "2026-09-04T08:08:15.386950+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.208.223.2",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0108",
+    "timestamp": "2026-09-04T08:09:44.855719+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.180.240.175",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0109",
+    "timestamp": "2026-09-04T08:11:01.899638+00:00",
+    "actor_id": "merchant_014",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0110",
+    "timestamp": "2026-09-04T08:14:00+00:00",
+    "actor_id": "merchant_013",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.187.63.42",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0111",
+    "timestamp": "2026-09-04T08:19:37.573097+00:00",
+    "actor_id": "merchant_014",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.229.140.23",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0112",
+    "timestamp": "2026-09-04T08:39:18.471510+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0113",
+    "timestamp": "2026-09-04T08:41:11.315244+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.18.12.170",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0114",
+    "timestamp": "2026-09-04T08:46:21.017766+00:00",
+    "actor_id": "merchant_013",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.54.172.69",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0115",
+    "timestamp": "2026-09-04T09:13:40.809690+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.180.240.175",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0116",
+    "timestamp": "2026-09-04T09:22:00+00:00",
+    "actor_id": "merchant_014",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0117",
+    "timestamp": "2026-09-04T09:33:23.552589+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0118",
+    "timestamp": "2026-09-04T09:35:00+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.213.161.159",
+    "status": "success",
+    "amount": 711.46,
+    "_ground_truth": "normal_baseline"
+  },
+  {
+    "event_id": "evt_0119",
+    "timestamp": "2026-09-04T09:37:05.818859+00:00",
+    "actor_id": "merchant_002",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.164.29.7",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0120",
+    "timestamp": "2026-09-04T09:41:55.993450+00:00",
+    "actor_id": "merchant_008",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.222.26",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0121",
+    "timestamp": "2026-09-04T09:44:20.530071+00:00",
+    "actor_id": "merchant_001",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.195.207.41",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0122",
+    "timestamp": "2026-09-04T09:46:32.129577+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.27.174.190",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0123",
+    "timestamp": "2026-09-04T09:47:40.643730+00:00",
+    "actor_id": "merchant_013",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.180.240.175",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0124",
+    "timestamp": "2026-09-04T09:51:06.321750+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.213.161.159",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0125",
+    "timestamp": "2026-09-04T09:51:34.570514+00:00",
+    "actor_id": "merchant_002",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.27.174.190",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0126",
+    "timestamp": "2026-09-04T09:52:56.548007+00:00",
+    "actor_id": "merchant_006",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.152.109.9",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0127",
+    "timestamp": "2026-09-04T09:57:01.130099+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.119.98.70",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0128",
+    "timestamp": "2026-09-04T09:57:54.537086+00:00",
+    "actor_id": "merchant_007",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.42.95.91",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0129",
+    "timestamp": "2026-09-04T10:04:35.191325+00:00",
+    "actor_id": "merchant_019",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.166.19.156",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0130",
+    "timestamp": "2026-09-04T10:05:01.336458+00:00",
+    "actor_id": "merchant_013",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.119.98.70",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0131",
+    "timestamp": "2026-09-04T10:05:27+00:00",
+    "actor_id": "admin_01",
+    "action": "page_view",
+    "endpoint": "/admin/reports",
+    "ip": "103.190.71.63",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0132",
+    "timestamp": "2026-09-04T10:20:27+00:00",
+    "actor_id": "admin_02",
+    "action": "page_view",
+    "endpoint": "/admin/reports",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0133",
+    "timestamp": "2026-09-04T10:21:41.354864+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.190.71.63",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0134",
+    "timestamp": "2026-09-04T10:22:54+00:00",
+    "actor_id": "admin_03",
+    "action": "page_view",
+    "endpoint": "/admin/reports",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0135",
+    "timestamp": "2026-09-04T10:25:37.631743+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.163.214.94",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0136",
+    "timestamp": "2026-09-04T10:34:20.674239+00:00",
+    "actor_id": "merchant_019",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.152.109.9",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0137",
+    "timestamp": "2026-09-04T10:50:26.147955+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.42.95.91",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0138",
+    "timestamp": "2026-09-04T10:53:21.064722+00:00",
+    "actor_id": "merchant_008",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.18.12.170",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0139",
+    "timestamp": "2026-09-04T10:57:31.169950+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.229.140.23",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0140",
+    "timestamp": "2026-09-04T10:57:56.769596+00:00",
+    "actor_id": "merchant_003",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.119.98.70",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0141",
+    "timestamp": "2026-09-04T11:10:48+00:00",
+    "actor_id": "admin_03",
+    "action": "page_view",
+    "endpoint": "/admin/dashboard",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0142",
+    "timestamp": "2026-09-04T11:13:55.732114+00:00",
+    "actor_id": "merchant_003",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.227.221.93",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0143",
+    "timestamp": "2026-09-04T11:19:00+00:00",
+    "actor_id": "merchant_007",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.7.144.51",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0144",
+    "timestamp": "2026-09-04T11:20:36.483894+00:00",
+    "actor_id": "merchant_014",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0145",
+    "timestamp": "2026-09-04T11:25:05.879185+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.152.109.9",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0146",
+    "timestamp": "2026-09-04T11:32:00+00:00",
+    "actor_id": "merchant_018",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.250.237.97",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0147",
+    "timestamp": "2026-09-04T11:36:58.035229+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.253.21.219",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0148",
+    "timestamp": "2026-09-04T11:43:59+00:00",
+    "actor_id": "admin_02",
+    "action": "page_view",
+    "endpoint": "/admin/dashboard",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0149",
+    "timestamp": "2026-09-04T11:47:40+00:00",
+    "actor_id": "admin_01",
+    "action": "page_view",
+    "endpoint": "/admin/dashboard",
+    "ip": "103.229.140.23",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0150",
+    "timestamp": "2026-09-04T12:03:36.102061+00:00",
+    "actor_id": "merchant_017",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.163.214.94",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0151",
+    "timestamp": "2026-09-04T12:13:02.086025+00:00",
+    "actor_id": "merchant_018",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0152",
+    "timestamp": "2026-09-04T12:20:00+00:00",
+    "actor_id": "merchant_004",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0153",
+    "timestamp": "2026-09-04T12:24:26+00:00",
+    "actor_id": "admin_02",
+    "action": "page_view",
+    "endpoint": "/admin/reports",
+    "ip": "103.190.71.63",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0154",
+    "timestamp": "2026-09-04T12:28:00+00:00",
+    "actor_id": "rzp_key_b4efd80d1f79",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.18.12.170",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0155",
+    "timestamp": "2026-09-04T12:30:47.614131+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.253.21.219",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0156",
+    "timestamp": "2026-09-04T12:43:28.277344+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0157",
+    "timestamp": "2026-09-04T13:01:11+00:00",
+    "actor_id": "admin_02",
+    "action": "page_view",
+    "endpoint": "/admin/reports",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0158",
+    "timestamp": "2026-09-04T13:10:19.623639+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.60.130.155",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0159",
+    "timestamp": "2026-09-04T13:13:52.087560+00:00",
+    "actor_id": "merchant_014",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.60.130.155",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0160",
+    "timestamp": "2026-09-04T13:14:41.386658+00:00",
+    "actor_id": "merchant_003",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.253.21.219",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0161",
+    "timestamp": "2026-09-04T13:36:14+00:00",
+    "actor_id": "admin_02",
+    "action": "page_view",
+    "endpoint": "/admin/dashboard",
+    "ip": "103.229.140.23",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0162",
+    "timestamp": "2026-09-04T13:38:19+00:00",
+    "actor_id": "admin_02",
+    "action": "page_view",
+    "endpoint": "/admin/dashboard",
+    "ip": "103.229.140.23",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0163",
+    "timestamp": "2026-09-04T13:39:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 926.68,
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0164",
+    "timestamp": "2026-09-04T13:46:04.704723+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.118.138.32",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0165",
+    "timestamp": "2026-09-04T13:55:28.117611+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.187.63.42",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0166",
+    "timestamp": "2026-09-04T13:59:42.232740+00:00",
+    "actor_id": "merchant_012",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.163.214.94",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0167",
+    "timestamp": "2026-09-04T14:00:11+00:00",
+    "actor_id": "admin_01",
+    "action": "page_view",
+    "endpoint": "/admin/support-tickets",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0168",
+    "timestamp": "2026-09-04T14:02:17.359846+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.250.237.97",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0169",
+    "timestamp": "2026-09-04T14:09:16.178267+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0170",
+    "timestamp": "2026-09-04T14:11:00+00:00",
+    "actor_id": "merchant_005",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.213.161.159",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0171",
+    "timestamp": "2026-09-04T14:14:29.658587+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.25.92.217",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0172",
+    "timestamp": "2026-09-04T14:15:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 963.51,
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0173",
+    "timestamp": "2026-09-04T14:15:30.783716+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.163.44.137",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0174",
+    "timestamp": "2026-09-04T14:16:15.331091+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.166.19.156",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0175",
+    "timestamp": "2026-09-04T14:19:46+00:00",
+    "actor_id": "admin_02",
+    "action": "page_view",
+    "endpoint": "/admin/dashboard",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0176",
+    "timestamp": "2026-09-04T14:22:30.261870+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0177",
+    "timestamp": "2026-09-04T14:30:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0178",
+    "timestamp": "2026-09-04T14:30:15+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0179",
+    "timestamp": "2026-09-04T14:30:30+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0180",
+    "timestamp": "2026-09-04T14:30:45+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0181",
+    "timestamp": "2026-09-04T14:31:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0182",
+    "timestamp": "2026-09-04T14:31:15+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0183",
+    "timestamp": "2026-09-04T14:31:30+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0184",
+    "timestamp": "2026-09-04T14:31:45+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0185",
+    "timestamp": "2026-09-04T14:32:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0186",
+    "timestamp": "2026-09-04T14:32:15+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0187",
+    "timestamp": "2026-09-04T14:32:30+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0188",
+    "timestamp": "2026-09-04T14:32:45+00:00",
+    "actor_id": "merchant_088",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 499.0,
+    "metadata": {
+      "bulk_operation": true,
+      "batch_id": "BATCH-20260904-001",
+      "refund_reason": "subscription_cancellation_batch",
+      "processor": "automated_batch_system"
+    },
+    "_ground_truth": "false_positive_benign"
+  },
+  {
+    "event_id": "evt_0189",
+    "timestamp": "2026-09-04T14:32:53.318835+00:00",
+    "actor_id": "merchant_007",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.89.155.68",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0190",
+    "timestamp": "2026-09-04T14:33:49.748623+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.89.155.68",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0191",
+    "timestamp": "2026-09-04T14:41:00+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.118.138.32",
+    "status": "success",
+    "amount": 318.64,
+    "_ground_truth": "normal_baseline"
+  },
+  {
+    "event_id": "evt_0192",
+    "timestamp": "2026-09-04T14:56:43.238095+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.163.214.94",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0193",
+    "timestamp": "2026-09-04T15:06:13.942973+00:00",
+    "actor_id": "merchant_007",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.98.72.117",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0194",
+    "timestamp": "2026-09-04T15:06:36.123397+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.89.155.68",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0195",
+    "timestamp": "2026-09-04T15:10:48.113487+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.89.155.68",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0196",
+    "timestamp": "2026-09-04T15:20:13.818586+00:00",
+    "actor_id": "merchant_001",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.72.40.56",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0197",
+    "timestamp": "2026-09-04T15:22:55+00:00",
+    "actor_id": "admin_03",
+    "action": "page_view",
+    "endpoint": "/admin/support-tickets",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0198",
+    "timestamp": "2026-09-04T15:25:46.034674+00:00",
+    "actor_id": "merchant_001",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.227.221.93",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0199",
+    "timestamp": "2026-09-04T15:26:00+00:00",
+    "actor_id": "merchant_009",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.195.207.41",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0200",
+    "timestamp": "2026-09-04T15:42:07.283551+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.195.207.41",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0201",
+    "timestamp": "2026-09-04T15:43:10.574362+00:00",
+    "actor_id": "merchant_013",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.184.167.180",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0202",
+    "timestamp": "2026-09-04T15:46:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 855.53,
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0203",
+    "timestamp": "2026-09-04T15:50:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 1172.84,
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0204",
+    "timestamp": "2026-09-04T15:54:03.399005+00:00",
+    "actor_id": "merchant_003",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.7.144.51",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0205",
+    "timestamp": "2026-09-04T15:55:02.893538+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.7.144.51",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0206",
+    "timestamp": "2026-09-04T16:03:21.076644+00:00",
+    "actor_id": "merchant_019",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.246.196.87",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0207",
+    "timestamp": "2026-09-04T16:06:33.452095+00:00",
+    "actor_id": "merchant_012",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.60.130.155",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0208",
+    "timestamp": "2026-09-04T16:15:04.923871+00:00",
+    "actor_id": "merchant_006",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.250.237.97",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0209",
+    "timestamp": "2026-09-04T16:23:01.839634+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.179.109.88",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0210",
+    "timestamp": "2026-09-04T16:27:48.180916+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.152.109.9",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0211",
+    "timestamp": "2026-09-04T16:31:00.457761+00:00",
+    "actor_id": "merchant_013",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.59.198.75",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0212",
+    "timestamp": "2026-09-04T16:46:15.755728+00:00",
+    "actor_id": "merchant_001",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0213",
+    "timestamp": "2026-09-04T16:49:08.358764+00:00",
+    "actor_id": "merchant_013",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.60.222.26",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0214",
+    "timestamp": "2026-09-04T16:50:00+00:00",
+    "actor_id": "merchant_088",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.58.36.189",
+    "status": "success",
+    "amount": 1202.99,
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0215",
+    "timestamp": "2026-09-04T17:03:37+00:00",
+    "actor_id": "admin_03",
+    "action": "page_view",
+    "endpoint": "/admin/reports",
+    "ip": "103.164.29.7",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0216",
+    "timestamp": "2026-09-04T17:05:08.729528+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.207.12.187",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0217",
+    "timestamp": "2026-09-04T17:06:47.463438+00:00",
+    "actor_id": "merchant_008",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.207.12.187",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0218",
+    "timestamp": "2026-09-04T17:13:09+00:00",
+    "actor_id": "admin_03",
+    "action": "page_view",
+    "endpoint": "/admin/support-tickets",
+    "ip": "103.190.71.63",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0219",
+    "timestamp": "2026-09-04T17:31:56.803343+00:00",
+    "actor_id": "merchant_009",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.152.109.9",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0220",
+    "timestamp": "2026-09-04T17:53:00.739846+00:00",
+    "actor_id": "merchant_016",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.163.214.94",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0221",
+    "timestamp": "2026-09-04T17:57:49.661849+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.21.142.76",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0222",
+    "timestamp": "2026-09-04T17:57:50.754702+00:00",
+    "actor_id": "merchant_002",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.229.140.23",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0223",
+    "timestamp": "2026-09-04T17:59:56.122173+00:00",
+    "actor_id": "merchant_019",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.118.138.32",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0224",
+    "timestamp": "2026-09-04T18:05:20.494838+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.119.98.70",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0225",
+    "timestamp": "2026-09-04T18:18:06.831420+00:00",
+    "actor_id": "merchant_006",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0226",
+    "timestamp": "2026-09-04T18:20:02.047069+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.42.95.91",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0227",
+    "timestamp": "2026-09-04T18:24:23.426670+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.58.36.189",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0228",
+    "timestamp": "2026-09-04T18:37:00+00:00",
+    "actor_id": "merchant_016",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.42.95.91",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0229",
+    "timestamp": "2026-09-04T18:48:16.655772+00:00",
+    "actor_id": "merchant_015",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.180.240.175",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0230",
+    "timestamp": "2026-09-04T19:00:35.550409+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.59.198.75",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0231",
+    "timestamp": "2026-09-04T19:02:00+00:00",
+    "actor_id": "merchant_014",
+    "action": "login_attempt",
+    "endpoint": "/v1/auth/login",
+    "ip": "103.190.71.63",
+    "status": "success",
+    "_ground_truth": "normal"
+  },
+  {
+    "event_id": "evt_0232",
+    "timestamp": "2026-09-04T19:02:11.114359+00:00",
+    "actor_id": "merchant_006",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.25.92.217",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0233",
+    "timestamp": "2026-09-04T19:04:09+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 2080.31,
+    "metadata": {
+      "refund_reason": "customer_request"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0234",
+    "timestamp": "2026-09-04T19:04:38+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 10923.68,
+    "metadata": {
+      "refund_reason": "customer_request"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0235",
+    "timestamp": "2026-09-04T19:09:35+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 6273.51,
+    "metadata": {
+      "refund_reason": "order_cancelled"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0236",
+    "timestamp": "2026-09-04T19:10:49+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 7807.79,
+    "metadata": {
+      "refund_reason": "customer_request"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0237",
+    "timestamp": "2026-09-04T19:11:00.617879+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0238",
+    "timestamp": "2026-09-04T19:11:19+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 3523.68,
+    "metadata": {
+      "refund_reason": "customer_request"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0239",
+    "timestamp": "2026-09-04T19:12:09+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 3271.46,
+    "metadata": {
+      "refund_reason": "duplicate_payment"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0240",
+    "timestamp": "2026-09-04T19:16:49+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 8556.79,
+    "metadata": {
+      "refund_reason": "duplicate_payment"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0241",
+    "timestamp": "2026-09-04T19:17:06.844982+00:00",
+    "actor_id": "merchant_017",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.180.240.175",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0242",
+    "timestamp": "2026-09-04T19:20:34.148490+00:00",
+    "actor_id": "merchant_007",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.229.140.23",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0243",
+    "timestamp": "2026-09-04T19:21:09+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 13834.45,
+    "metadata": {
+      "refund_reason": "order_cancelled"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0244",
+    "timestamp": "2026-09-04T19:21:27+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 8118.84,
+    "metadata": {
+      "refund_reason": "customer_request"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0245",
+    "timestamp": "2026-09-04T19:21:58+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 8369.51,
+    "metadata": {
+      "refund_reason": "duplicate_payment"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0246",
+    "timestamp": "2026-09-04T19:23:28+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 1611.69,
+    "metadata": {
+      "refund_reason": "order_cancelled"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0247",
+    "timestamp": "2026-09-04T19:23:54+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 10191.9,
+    "metadata": {
+      "refund_reason": "duplicate_payment"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0248",
+    "timestamp": "2026-09-04T19:24:39+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 12326.61,
+    "metadata": {
+      "refund_reason": "customer_request"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0249",
+    "timestamp": "2026-09-04T19:26:08+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 10381.63,
+    "metadata": {
+      "refund_reason": "duplicate_payment"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0250",
+    "timestamp": "2026-09-04T19:27:09+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 5667.07,
+    "metadata": {
+      "refund_reason": "duplicate_payment"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0251",
+    "timestamp": "2026-09-04T19:28:33+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 1528.46,
+    "metadata": {
+      "refund_reason": "order_cancelled"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0252",
+    "timestamp": "2026-09-04T19:28:49+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 9652.44,
+    "metadata": {
+      "refund_reason": "duplicate_payment"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0253",
+    "timestamp": "2026-09-04T19:30:41+00:00",
+    "actor_id": "merchant_042",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.60.130.155",
+    "status": "success",
+    "amount": 10778.72,
+    "metadata": {
+      "refund_reason": "order_cancelled"
+    },
+    "_ground_truth": "merchant_refund_spike"
+  },
+  {
+    "event_id": "evt_0254",
+    "timestamp": "2026-09-04T19:30:43.291439+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.152.109.9",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0255",
+    "timestamp": "2026-09-04T19:35:04.087527+00:00",
+    "actor_id": "merchant_015",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.179.109.88",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0256",
+    "timestamp": "2026-09-04T20:17:32.594606+00:00",
+    "actor_id": "merchant_003",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0257",
+    "timestamp": "2026-09-04T20:20:45.360230+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.42.95.91",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0258",
+    "timestamp": "2026-09-04T20:21:16.389709+00:00",
+    "actor_id": "merchant_006",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.60.222.26",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0259",
+    "timestamp": "2026-09-04T20:24:31.267887+00:00",
+    "actor_id": "merchant_006",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.250.237.97",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0260",
+    "timestamp": "2026-09-04T20:26:31.150999+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.98.72.117",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0261",
+    "timestamp": "2026-09-04T20:27:56.983501+00:00",
+    "actor_id": "merchant_004",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.166.19.156",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0262",
+    "timestamp": "2026-09-04T20:29:29.964887+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.164.29.7",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0263",
+    "timestamp": "2026-09-04T20:38:33.060930+00:00",
+    "actor_id": "merchant_012",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.8.24.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0264",
+    "timestamp": "2026-09-04T20:39:07.625221+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.18.12.170",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0265",
+    "timestamp": "2026-09-04T20:44:49.919117+00:00",
+    "actor_id": "merchant_002",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.25.92.217",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0266",
+    "timestamp": "2026-09-04T20:51:21.409330+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.179.109.88",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0267",
+    "timestamp": "2026-09-04T20:58:42.696551+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.72.40.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0268",
+    "timestamp": "2026-09-04T21:04:28.846931+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.72.40.56",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0269",
+    "timestamp": "2026-09-04T21:07:33.812756+00:00",
+    "actor_id": "merchant_008",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.140.108.57",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0270",
+    "timestamp": "2026-09-04T21:10:47.405998+00:00",
+    "actor_id": "merchant_005",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.21.142.76",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0271",
+    "timestamp": "2026-09-04T21:35:51.849616+00:00",
+    "actor_id": "merchant_001",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.7.144.51",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0272",
+    "timestamp": "2026-09-04T21:47:20.267964+00:00",
+    "actor_id": "merchant_010",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.89.155.68",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0273",
+    "timestamp": "2026-09-04T22:03:13.223529+00:00",
+    "actor_id": "merchant_020",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.227.221.93",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0274",
+    "timestamp": "2026-09-04T22:44:15.722965+00:00",
+    "actor_id": "merchant_003",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.98.72.117",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0275",
+    "timestamp": "2026-09-04T22:47:06.419793+00:00",
+    "actor_id": "merchant_015",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.180.240.175",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0276",
+    "timestamp": "2026-09-04T22:47:50.933365+00:00",
+    "actor_id": "merchant_012",
+    "action": "api_call",
+    "endpoint": "/v1/payments",
+    "ip": "103.54.172.69",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0277",
+    "timestamp": "2026-09-04T22:49:14.368501+00:00",
+    "actor_id": "merchant_002",
+    "action": "api_call",
+    "endpoint": "/v1/invoices",
+    "ip": "103.195.207.41",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0278",
+    "timestamp": "2026-09-04T23:04:11.404563+00:00",
+    "actor_id": "merchant_019",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.27.24.98",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0279",
+    "timestamp": "2026-09-04T23:04:21.590148+00:00",
+    "actor_id": "merchant_009",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.208.223.2",
+    "status": "failed"
+  },
+  {
+    "event_id": "evt_0280",
+    "timestamp": "2026-09-04T23:14:41.041464+00:00",
+    "actor_id": "merchant_011",
+    "action": "api_call",
+    "endpoint": "/v1/customers",
+    "ip": "103.152.109.9",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0281",
+    "timestamp": "2026-09-04T23:16:05.749313+00:00",
+    "actor_id": "merchant_013",
+    "action": "api_call",
+    "endpoint": "/v1/settlements",
+    "ip": "103.54.172.69",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0282",
+    "timestamp": "2026-09-04T23:24:45.628883+00:00",
+    "actor_id": "merchant_006",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.115.151.72",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0283",
+    "timestamp": "2026-09-04T23:30:34.321579+00:00",
+    "actor_id": "merchant_008",
+    "action": "api_call",
+    "endpoint": "/v1/orders",
+    "ip": "103.213.161.159",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0284",
+    "timestamp": "2026-09-04T23:43:55.446094+00:00",
+    "actor_id": "merchant_018",
+    "action": "api_call",
+    "endpoint": "/v1/payments/capture",
+    "ip": "103.27.174.190",
+    "status": "success"
+  },
+  {
+    "event_id": "evt_0285",
+    "timestamp": "2026-09-04T23:54:09.160598+00:00",
+    "actor_id": "merchant_018",
+    "action": "refund_issued",
+    "endpoint": "/v1/refunds",
+    "ip": "103.253.21.219",
+    "status": "success"
+  }
+]
