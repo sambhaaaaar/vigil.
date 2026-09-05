@@ -305,16 +305,16 @@ def run_triage(flags: list[dict], all_events: list[dict]) -> list[dict]:
     2. Triage each incident with the LLM
     3. Return sorted incidents (escalate first)
     """
-    print("\n  🔗 Clustering related flags into incidents...")
+    print("\n  Clustering related flags into incidents...")
     incident_groups = cluster_flags(flags)
     print(f"     Found {len(incident_groups)} incident group(s)")
     
     incidents = []
     for i, group in enumerate(incident_groups, 1):
-        print(f"\n  🧠 Triaging incident {i}/{len(incident_groups)}: {group.get('incident_group', 'unknown')}...")
+        print(f"\n  Triaging incident {i}/{len(incident_groups)}: {group.get('incident_group', 'unknown')}...")
         incident = triage_incident(group, flags, all_events, i)
         incidents.append(incident)
-        print(f"     → {incident.get('severity', '?').upper()} (confidence: {incident.get('confidence', '?')})")
+        print(f"     -> {incident.get('severity', '?').upper()} (confidence: {incident.get('confidence', '?')})")
     
     # Sort: escalate > watch > dismiss
     severity_order = {"escalate": 0, "watch": 1, "dismiss": 2}

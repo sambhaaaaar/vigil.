@@ -4,7 +4,7 @@ This guide provides a structured, time-stamped script you can follow while recor
 
 ---
 
-## ⏱️ Timeline & Presentation Flow
+## Timeline & Presentation Flow
 
 ### 0:00 – 1:00 | The Problem & Vision
 * **On Screen:** Start on the **Landing Page** (`/welcome` or clicking **Product Tour**).
@@ -33,7 +33,7 @@ This guide provides a structured, time-stamped script you can follow while recor
 * **What to say:**
   > *"When an analyst decides to act, clicking **Apply Mitigation** allows them to immediately deploy perimeter WAF rules, force session key rotations, and notify merchants. Once deployed, the incident automatically closes, and the metrics ribbon updates live.*
   > 
-  > *Now let's examine our false-positive handling on **INC-004**. Here, Merchant 088 issued 12 rapid refunds. While flagged by statistical volume rules, our copilot analyzed the payload metadata, recognized the uniform ₹499 plan amounts and recurring batch ID `BATCH-20260904-001`, and **correctly dismissed the alert with 99% confidence**, preventing unnecessary merchant payout freezes."*
+  > *Now let's examine our false-positive handling on **INC-004**. Here, Merchant 088 issued 12 rapid refunds. While flagged by statistical volume rules, our copilot analyzed the payload metadata, recognized the uniform INR 499 plan amounts and recurring batch ID `BATCH-20260904-001`, and **correctly dismissed the alert with 99% confidence**, preventing unnecessary merchant payout freezes."*
 
 ---
 

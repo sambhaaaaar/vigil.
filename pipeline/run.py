@@ -129,11 +129,9 @@ def print_summary(flags, incidents):
         sev_counts[sev] = sev_counts.get(sev, 0) + 1
 
     print(f"  Severity Breakdown:")
-    severity_colors = {"escalate": "🔴", "watch": "🟡", "dismiss": "🟢"}
     for sev in ["escalate", "watch", "dismiss"]:
         count = sev_counts.get(sev, 0)
-        icon = severity_colors.get(sev, "⚪")
-        print(f"    {icon} {sev.upper():>10}: {count}")
+        print(f"    [{sev.upper():<8}]: {count}")
 
     print(f"\n  {'─'*66}")
     print(f"  {'ID':<10} {'SEVERITY':<12} {'CONF':>6}  {'TITLE':<40}")
@@ -144,8 +142,7 @@ def print_summary(flags, incidents):
         severity = inc.get("severity", "?").upper()
         confidence = inc.get("confidence", 0)
         title = inc.get("title", "N/A")[:40]
-        icon = severity_colors.get(inc.get("severity", ""), "⚪")
-        print(f"  {icon} {inc_id:<8} {severity:<12} {confidence:>5.2f}  {title}")
+        print(f"  {inc_id:<10} {severity:<12} {confidence:>5.2f}  {title}")
 
     print(f"  {'─'*66}")
 
@@ -153,8 +150,7 @@ def print_summary(flags, incidents):
     print(f"\n  INCIDENT DETAILS:")
     for inc in incidents:
         sev = inc.get("severity", "?")
-        icon = severity_colors.get(sev, "⚪")
-        print(f"\n  {icon} {inc.get('incident_id', '?')} — {inc.get('title', 'N/A')}")
+        print(f"\n  [{sev.upper()}] {inc.get('incident_id', '?')} — {inc.get('title', 'N/A')}")
         print(f"     Severity: {sev.upper()} | Confidence: {inc.get('confidence', '?')}")
         print(f"     Explanation: {inc.get('explanation', 'N/A')}")
         print(f"     Action: {inc.get('recommended_action', 'N/A')}")
@@ -166,47 +162,46 @@ def print_summary(flags, incidents):
 
 def main():
     """Run the full pipeline."""
-    # Load .env for API keys
     try:
         from dotenv import load_dotenv
         load_dotenv(PROJECT_ROOT / ".env")
     except ImportError:
-        pass  # dotenv not installed, rely on environment variables
+        pass
 
     print()
     print(f"{'═'*70}")
-    print(f"  🛡️  AI SOC INSIGHT PIPELINE — Razorpay Security")
+    print(f"  Vigil — Payment Risk Intelligence Pipeline")
     print(f"{'═'*70}")
     
     start_time = time.time()
 
     # Stage 0: Load data
-    print(f"\n📦 STAGE 0 — Loading events...")
+    print(f"\nSTAGE 0 — Loading events...")
     events = load_events()
 
     # Stage 1: Detector
-    print(f"\n🔍 STAGE 1 — Running anomaly detector...")
+    print(f"\nSTAGE 1 — Running anomaly detector...")
     flags = run_detector(events)
-    print(f"  ✓ Detector complete: {len(flags)} flags raised")
+    print(f"  Detector complete: {len(flags)} flags raised")
     
     for flag in flags:
         print(f"    [{flag['severity_hint'].upper():>8}] {flag['flag_id']} — {flag['rule']} "
               f"({len(flag['events'])} events)")
 
     # Stage 2: Copilot
-    print(f"\n🧠 STAGE 2 — Running LLM triage copilot...")
+    print(f"\nSTAGE 2 — Running LLM triage copilot...")
     incidents = run_copilot(flags, events)
-    print(f"  ✓ Triage complete: {len(incidents)} incidents assessed")
+    print(f"  Triage complete: {len(incidents)} incidents assessed")
 
     # Save outputs
-    print(f"\n💾 Saving outputs...")
+    print(f"\nSaving outputs...")
     save_outputs(flags, incidents, events)
 
     # Summary
     elapsed = time.time() - start_time
     print_summary(flags, incidents)
     
-    print(f"\n  ⏱ Pipeline completed in {elapsed:.1f}s")
+    print(f"\n  Pipeline completed in {elapsed:.1f}s")
     print(f"{'═'*70}\n")
 
     return incidents
